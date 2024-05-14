@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Coint
+  - Enemy
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -13,7 +15,7 @@ TagManager:
   - Water
   - UI
   - 
-  - 
+  - Ground
   - 
   - 
   - 
@@ -41,4 +43,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 848022741
     locked: 0

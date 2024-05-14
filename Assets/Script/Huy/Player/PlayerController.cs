@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,11 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] float runSpeed = 10f;
     [SerializeField] float jumpSpeed = 5f;
+    [SerializeField] float doubleJumpSpeed = 5f; 
+    [SerializeField] private int maxJumps = 2;
+    [SerializeField] BoxCollider2D colliderCheckGroud;
 
+    private int jumpCount = 0;
     private Vector2 moveInput;
     private Rigidbody2D myRigidbody;
     private SpriteRenderer mySpriteRenderer;
@@ -18,7 +23,6 @@ public class PlayerController : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
         myAnimator = GetComponent<Animator>();
-
     }
 
     void Update()
@@ -35,13 +39,26 @@ public class PlayerController : MonoBehaviour
 
     void OnJump(InputValue value)
     {
-        if (value.isPressed)
+        if (value.isPressed && jumpCount < maxJumps)
         {
-            // do stuff
-            myRigidbody.velocity += new Vector2(0f, jumpSpeed);
+            if (jumpCount == 0)
+                myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpSpeed);
+            else
+                myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, doubleJumpSpeed);
+
+            jumpCount++; 
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            jumpCount = 0;
+        }
+    }
+   
+    
     void Animation()
     {
         if (moveInput.x != 0)
@@ -52,7 +69,6 @@ public class PlayerController : MonoBehaviour
         {
             myAnimator.SetBool("IsRunning", false);
         }
-        
     }
 
     void Flip()
@@ -65,7 +81,6 @@ public class PlayerController : MonoBehaviour
         {
             mySpriteRenderer.flipX = false;
         }
-       
     }
 
     void Run()
