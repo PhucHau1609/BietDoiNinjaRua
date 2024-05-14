@@ -10,19 +10,20 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float doubleJumpSpeed = 5f; 
     [SerializeField] private int maxJumps = 2;
-    [SerializeField] BoxCollider2D colliderCheckGroud;
 
     private int jumpCount = 0;
     private Vector2 moveInput;
     private Rigidbody2D myRigidbody;
     private SpriteRenderer mySpriteRenderer;
     private Animator myAnimator;
+    CapsuleCollider2D myCapsuleCollider;
 
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
         myAnimator = GetComponent<Animator>();
+        myCapsuleCollider = GetComponent<CapsuleCollider2D>();
     }
 
     void Update()
@@ -35,10 +36,12 @@ public class PlayerController : MonoBehaviour
         moveInput = value.Get<Vector2>();
         Animation();
         Flip();
+        Climping();
     }
 
     void OnJump(InputValue value)
     {
+        //if (!myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))){return;}
         if (value.isPressed && jumpCount < maxJumps)
         {
             if (jumpCount == 0)
@@ -50,15 +53,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
             jumpCount = 0;
         }
     }
-   
-    
+
+    void Climping()
+    {
+        if (!myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Climping"))) { return; }
+        Debug.Log("Climping IsWork");
+
+    }
+
     void Animation()
     {
         if (moveInput.x != 0)
