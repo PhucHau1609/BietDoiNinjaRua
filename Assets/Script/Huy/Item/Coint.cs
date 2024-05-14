@@ -8,10 +8,13 @@ public class Coint : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerPrefs.SetInt("goldGlobalVar", PlayerPrefs.GetInt("goldGlobalVar") + 1);
+            int currentGold = PlayerPrefs.GetInt("goldGlobalVar", 0);
+            currentGold++;
+            PlayerPrefs.SetInt("goldGlobalVar", currentGold);
             Destroy(gameObject);
+
+            // Gọi hàm cập nhật UI tại đây
+            FindObjectOfType<UI>().UpdateGoldUI();
         }
     }
-
-   
 }

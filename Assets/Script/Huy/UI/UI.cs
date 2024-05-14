@@ -7,22 +7,16 @@ public class UI : MonoBehaviour
 {
     [SerializeField] private TMP_Text goldText;
 
-    private int gold;
-
-    public int Gold
-    {
-        get { return gold; }
-        set { gold = value; }
-    }
-
     void Start()
     {
-        Gold = PlayerPrefs.GetInt("goldGlobalVar");
-        
+        PlayerPrefs.SetInt("goldGlobalVar", 0);
+
+        // Gọi hàm cập nhật UI khi game bắt đầu
+        UpdateGoldUI();
     }
 
-    void Update()
+    public void UpdateGoldUI()
     {
-        goldText.text = gold.ToString();
+        goldText.text = PlayerPrefs.GetInt("goldGlobalVar", 0).ToString();
     }
 }

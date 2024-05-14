@@ -24,15 +24,13 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Run();
-        Flip();
     }
 
     void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
-        Debug.Log(moveInput);
-
         Animation();
+        Flip();
     }
 
     void OnJump(InputValue value)
