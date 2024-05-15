@@ -7,6 +7,7 @@ TagManager:
   - Coint
   - Enemy
   - Ground
+  - Ladder
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - UI
   - 
   - Ground
-  - Climping
+  - Climbing
   - 
   - 
   - 
@@ -44,6 +45,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BackGround
+    uniqueID: 4239816677
+    locked: 0
+  - name: Water
+    uniqueID: 3582667123
+    locked: 0
   - name: Ground
     uniqueID: 848022741
+    locked: 0
+  - name: Climbing
+    uniqueID: 4170248591
+    locked: 0
+  - name: Platforms
+    uniqueID: 3856390555
+    locked: 0
+  - name: Player
+    uniqueID: 1149863179
     locked: 0
