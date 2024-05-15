@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
 
     void Climping()
     {
-        if (!myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Climping"))) { return; }
+        if (myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Climping"))) { return; }
         Debug.Log("Climping IsWork");
 
     }
