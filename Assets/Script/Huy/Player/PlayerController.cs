@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] float runSpeed = 10f;
     [SerializeField] float jumpSpeed = 5f;
+    [SerializeField] float climbSpeed = 5f;
     [SerializeField] float doubleJumpSpeed = 5f; 
     [SerializeField] private int maxJumps = 2;
 
@@ -16,7 +17,10 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D myRigidbody;
     private SpriteRenderer mySpriteRenderer;
     private Animator myAnimator;
-    CapsuleCollider2D myCapsuleCollider;
+    private CapsuleCollider2D myCapsuleCollider;
+    private float gravityScaleAtStart;
+
+    private bool inLadder = false; 
 
     void Start()
     {
@@ -24,19 +28,19 @@ public class PlayerController : MonoBehaviour
         mySpriteRenderer = GetComponent<SpriteRenderer>();
         myAnimator = GetComponent<Animator>();
         myCapsuleCollider = GetComponent<CapsuleCollider2D>();
+        gravityScaleAtStart = myRigidbody.gravityScale;
     }
 
     void Update()
     {
         Run();
+        Flip();
+        ClimbLadder();
     }
 
     void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
-        Animation();
-        Flip();
-        Climping();
     }
 
     void OnJump(InputValue value)
@@ -59,25 +63,45 @@ public class PlayerController : MonoBehaviour
         {
             jumpCount = 0;
         }
-    }
 
-    void Climping()
-    {
-        if (!myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Climping"))) { return; }
-        Debug.Log("Climping IsWork");
-
-    }
-
-    void Animation()
-    {
-        if (moveInput.x != 0)
+        if (collision.gameObject.CompareTag("Ladder"))
         {
-            myAnimator.SetBool("IsRunning", true);
+            inLadder = true;
+        }
+    }
+
+
+
+    void ClimbLadder()
+    {
+
+        if (!myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Climbing")))
+        {
+            myAnimator.SetBool("IdleClimbing", false);
+            myAnimator.SetBool("IsClimbing", false);
+
+            myRigidbody.gravityScale = gravityScaleAtStart;
+            return;
+        }
+
+
+        myAnimator.SetBool("IdleClimbing", true);
+        if (moveInput.y != 0)
+        {
+            myAnimator.SetBool("IsClimbing", true);
+            myAnimator.SetBool("IdleClimbing", false);
         }
         else
         {
-            myAnimator.SetBool("IsRunning", false);
+            myAnimator.SetBool("IsClimbing", false);
         }
+        Debug.Log("IsWork");
+
+
+        Vector2 climbVelocity = new Vector2(myRigidbody.velocity.x, moveInput.y * climbSpeed);
+        myRigidbody.velocity = climbVelocity;
+        myRigidbody.gravityScale = 0f;
+
     }
 
     void Flip()
@@ -96,5 +120,8 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 playerVelocity = new Vector2(moveInput.x * runSpeed, myRigidbody.velocity.y);
         myRigidbody.velocity = playerVelocity;
+
+        bool playerHasHorizontalSpeed = Mathf.Abs(myRigidbody.velocity.x) > Mathf.Epsilon;
+        myAnimator.SetBool("IsRunning", playerHasHorizontalSpeed);
     }
 }
