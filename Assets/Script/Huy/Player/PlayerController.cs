@@ -20,8 +20,6 @@ public class PlayerController : MonoBehaviour
     private CapsuleCollider2D myCapsuleCollider;
     private float gravityScaleAtStart;
 
-    private bool inLadder = false; 
-
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
@@ -63,11 +61,6 @@ public class PlayerController : MonoBehaviour
         {
             jumpCount = 0;
         }
-
-        if (collision.gameObject.CompareTag("Ladder"))
-        {
-            inLadder = true;
-        }
     }
 
 
@@ -84,7 +77,6 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-
         myAnimator.SetBool("IdleClimbing", true);
         if (moveInput.y != 0)
         {
@@ -95,8 +87,6 @@ public class PlayerController : MonoBehaviour
         {
             myAnimator.SetBool("IsClimbing", false);
         }
-        Debug.Log("IsWork");
-
 
         Vector2 climbVelocity = new Vector2(myRigidbody.velocity.x, moveInput.y * climbSpeed);
         myRigidbody.velocity = climbVelocity;
