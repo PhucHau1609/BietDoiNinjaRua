@@ -1,8 +1,11 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
+using System.Threading;
+using System.IO;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,6 +15,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float doubleJumpSpeed = 5f; 
     [SerializeField] private int maxJumps = 2;
 
+ 
+
     private int jumpCount = 0;
     private Vector2 moveInput;
     private Rigidbody2D myRigidbody;
@@ -19,6 +24,7 @@ public class PlayerController : MonoBehaviour
     private Animator myAnimator;
     private CapsuleCollider2D myCapsuleCollider;
     private float gravityScaleAtStart;
+
 
     void Start()
     {
@@ -62,8 +68,6 @@ public class PlayerController : MonoBehaviour
             jumpCount = 0;
         }
     }
-
-
 
     void ClimbLadder()
     {
@@ -114,4 +118,6 @@ public class PlayerController : MonoBehaviour
         bool playerHasHorizontalSpeed = Mathf.Abs(myRigidbody.velocity.x) > Mathf.Epsilon;
         myAnimator.SetBool("IsRunning", playerHasHorizontalSpeed);
     }
+
+  
 }
