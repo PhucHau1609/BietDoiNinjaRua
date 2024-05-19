@@ -4,6 +4,8 @@ using UnityEngine;
 using System.Linq;
 using System.Threading;
 using System.IO;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -39,6 +41,16 @@ public class GameManager : Singleton<GameManager>
     public void SetHeart(int value)
     {
         Heart = value;
+    }
+
+    public void PlayAgain()
+    {
+        SceneManager.LoadScene("Map 1");
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
     }
 
 }

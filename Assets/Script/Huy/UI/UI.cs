@@ -1,6 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
+using System.Threading;
+using System.IO;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class UI : MonoBehaviour
@@ -42,8 +47,6 @@ public class UI : MonoBehaviour
             heart2.SetActive(false);
             heart3.SetActive(false);
         }
-
-        Debug.Log("Coint: " + GameManager.Instance.GetCoint());
-        Debug.Log("Heart: " + GameManager.Instance.GetHeart());
     }
+
 }
