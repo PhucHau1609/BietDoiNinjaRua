@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
+using System.Threading;
+using System.IO;
 
 public class Coint : MonoBehaviour
 {
@@ -8,13 +11,8 @@ public class Coint : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            int currentGold = PlayerPrefs.GetInt("goldGlobalVar", 0);
-            currentGold++;
-            PlayerPrefs.SetInt("goldGlobalVar", currentGold);
+            GameManager.Instance.SetCoint(1);
             Destroy(gameObject);
-
-            // Gọi hàm cập nhật UI tại đây
-            FindObjectOfType<UI>().UpdateGoldUI();
         }
     }
 }

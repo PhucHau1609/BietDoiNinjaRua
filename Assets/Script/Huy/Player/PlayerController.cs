@@ -1,7 +1,9 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
+using System.Threading;
+using System.IO;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
@@ -12,7 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float climbSpeed = 5f;
     [SerializeField] float doubleJumpSpeed = 5f; 
     [SerializeField] private int maxJumps = 2;
-    [SerializeField] float timeLoadGameOverPlayerDied;
+
  
 
     private int jumpCount = 0;
@@ -22,11 +24,10 @@ public class PlayerController : MonoBehaviour
     private Animator myAnimator;
     private CapsuleCollider2D myCapsuleCollider;
     private float gravityScaleAtStart;
-    private Vector2 startCheckPoint;
+
 
     void Start()
     {
-        startCheckPoint = transform.position;
         myRigidbody = GetComponent<Rigidbody2D>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
         myAnimator = GetComponent<Animator>();
@@ -66,31 +67,7 @@ public class PlayerController : MonoBehaviour
         {
             jumpCount = 0;
         }
-
-        // Next level
-        if (collision.gameObject.tag == "NextLevel")
-        {
-            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            int totalScenes = SceneManager.sceneCountInBuildSettings;
-
-            if (currentSceneIndex == totalScenes - 1)
-            {
-                SceneManager.LoadScene("WinScene");
-            }
-            else
-            {
-                SceneManager.LoadScene(currentSceneIndex + 1);
-            }
-        }
-        else if (collision.gameObject.tag == "Water")
-        {
-            //StartCoroutine(GameOver());
-            PlayerDied();
-
-        }
     }
-
-
 
     void ClimbLadder()
     {
@@ -142,33 +119,5 @@ public class PlayerController : MonoBehaviour
         myAnimator.SetBool("IsRunning", playerHasHorizontalSpeed);
     }
 
-    private void PlayerDied()
-    {
-
-        //FindObjectOfType<AudioManager>().Play("PlayerDeath");
-        //PlayerPrefs.SetInt("GlobalLife", PlayerPrefs.GetInt("GlobalLife") - 1);
-        transform.position = startCheckPoint;
-        //StartCoroutine(WayPlayerDied());
-    }
-
-    private IEnumerator WayPlayerDied()
-    {
-
-        yield return new WaitForSeconds(0.5f);
-        if (PlayerPrefs.GetInt("GlobalLife") < 1)
-        {
-            SceneManager.LoadScene("GameOver");
-        }
-
-    }
-
-
-    private IEnumerator GameOver()
-    {
-        //crossFadeNextLevel.SetTrigger("Start");
-        //FindObjectOfType<AudioManager>().Play("PlayerDeath");
-        yield return new WaitForSeconds(timeLoadGameOverPlayerDied);
-        Destroy(gameObject);
-        SceneManager.LoadScene("GameOver");
-    }
+  
 }
