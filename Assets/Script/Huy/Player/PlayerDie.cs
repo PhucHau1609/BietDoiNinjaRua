@@ -19,7 +19,6 @@ public class PlayerDie : MonoBehaviour
         
         if (GameManager.Instance.GetHeart() <= 0)
         {
-            Debug.Log("IsWork");
             StartCoroutine(GameOver());
         }
     }

@@ -51,6 +51,7 @@ public class GameManager : Singleton<GameManager>
     public void Exit()
     {
         Application.Quit();
+        Debug.Log("Quit Game...");
     }
 
 }
