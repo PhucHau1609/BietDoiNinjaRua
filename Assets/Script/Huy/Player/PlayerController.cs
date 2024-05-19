@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float climbSpeed = 5f;
     [SerializeField] float doubleJumpSpeed = 5f; 
     [SerializeField] private int maxJumps = 2;
-
+    [SerializeField] float timeLoadGameOverPlayerDied;
     private int jumpCount = 0;
     private Vector2 moveInput;
     private Rigidbody2D myRigidbody;
@@ -60,6 +61,28 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             jumpCount = 0;
+        }
+
+        // Next level
+        if (collision.gameObject.tag == "NextLevel")
+        {
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            int totalScenes = SceneManager.sceneCountInBuildSettings;
+
+            if (currentSceneIndex == totalScenes - 1)
+            {
+                SceneManager.LoadScene("WinScene");
+            }
+            else
+            {
+                SceneManager.LoadScene(currentSceneIndex + 1);
+            }
+        }
+        else if (collision.gameObject.tag == "Water")
+        {
+            StartCoroutine(GameOver());
+
+
         }
     }
 
@@ -113,5 +136,36 @@ public class PlayerController : MonoBehaviour
 
         bool playerHasHorizontalSpeed = Mathf.Abs(myRigidbody.velocity.x) > Mathf.Epsilon;
         myAnimator.SetBool("IsRunning", playerHasHorizontalSpeed);
+    }
+
+    //private void PlayerDied()
+    //{
+
+    //    //FindObjectOfType<AudioManager>().Play("PlayerDeath");
+    //    //PlayerPrefs.SetInt("GlobalLife", PlayerPrefs.GetInt("GlobalLife") - 1);
+    //    crossFadeNextLevel.SetTrigger("Start");
+    //    transform.position = startCheckPoint;
+    //    StartCoroutine(WayPlayerDied());
+    //}
+
+    //private IEnumerator WayPlayerDied()
+    //{
+
+    //    yield return new WaitForSeconds(0.5f);
+    //    if (PlayerPrefs.GetInt("GlobalLife") < 1)
+    //    {
+    //        SceneManager.LoadScene("GameOver");
+    //    }
+
+    //}
+
+
+    private IEnumerator GameOver()
+    {
+        //crossFadeNextLevel.SetTrigger("Start");
+        //FindObjectOfType<AudioManager>().Play("PlayerDeath");
+        yield return new WaitForSeconds(timeLoadGameOverPlayerDied);
+        Destroy(gameObject);
+        SceneManager.LoadScene("GameOver");
     }
 }
