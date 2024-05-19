@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float doubleJumpSpeed = 5f; 
     [SerializeField] private int maxJumps = 2;
     [SerializeField] float timeLoadGameOverPlayerDied;
+ 
+
     private int jumpCount = 0;
     private Vector2 moveInput;
     private Rigidbody2D myRigidbody;
@@ -20,9 +22,11 @@ public class PlayerController : MonoBehaviour
     private Animator myAnimator;
     private CapsuleCollider2D myCapsuleCollider;
     private float gravityScaleAtStart;
+    private Vector2 startCheckPoint;
 
     void Start()
     {
+        startCheckPoint = transform.position;
         myRigidbody = GetComponent<Rigidbody2D>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
         myAnimator = GetComponent<Animator>();
@@ -80,8 +84,8 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Water")
         {
-            StartCoroutine(GameOver());
-
+            //StartCoroutine(GameOver());
+            PlayerDied();
 
         }
     }
@@ -138,26 +142,25 @@ public class PlayerController : MonoBehaviour
         myAnimator.SetBool("IsRunning", playerHasHorizontalSpeed);
     }
 
-    //private void PlayerDied()
-    //{
+    private void PlayerDied()
+    {
 
-    //    //FindObjectOfType<AudioManager>().Play("PlayerDeath");
-    //    //PlayerPrefs.SetInt("GlobalLife", PlayerPrefs.GetInt("GlobalLife") - 1);
-    //    crossFadeNextLevel.SetTrigger("Start");
-    //    transform.position = startCheckPoint;
-    //    StartCoroutine(WayPlayerDied());
-    //}
+        //FindObjectOfType<AudioManager>().Play("PlayerDeath");
+        //PlayerPrefs.SetInt("GlobalLife", PlayerPrefs.GetInt("GlobalLife") - 1);
+        transform.position = startCheckPoint;
+        //StartCoroutine(WayPlayerDied());
+    }
 
-    //private IEnumerator WayPlayerDied()
-    //{
+    private IEnumerator WayPlayerDied()
+    {
 
-    //    yield return new WaitForSeconds(0.5f);
-    //    if (PlayerPrefs.GetInt("GlobalLife") < 1)
-    //    {
-    //        SceneManager.LoadScene("GameOver");
-    //    }
+        yield return new WaitForSeconds(0.5f);
+        if (PlayerPrefs.GetInt("GlobalLife") < 1)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
 
-    //}
+    }
 
 
     private IEnumerator GameOver()
