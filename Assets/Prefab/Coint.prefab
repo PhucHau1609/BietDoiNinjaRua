@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2744221685322852720}
   m_Layer: 0
   m_Name: Coint
-  m_TagString: Untagged
+  m_TagString: Coint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,7 +95,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -644016995
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 1439432805, guid: 6eeb5e119717fcc42931431d3e3eac08, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -9,6 +9,8 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    [SerializeField] ParticleSystem getCointPTC;
+
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -26,6 +28,12 @@ public class LevelManager : MonoBehaviour
             {
                 SceneManager.LoadScene(currentSceneIndex + 1);
             }
+        }
+
+        if (collision.gameObject.tag == "Coint")
+        {
+            Debug.Log("IsWork");
+            getCointPTC.Play();
         }
     }
 
