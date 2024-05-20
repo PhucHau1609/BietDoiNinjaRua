@@ -11,25 +11,42 @@ public class login : MonoBehaviour
     public TMP_InputField edtName, edtPass;
     public TMP_Text txtMess;
     private EventSystem eveSy;
-    private Selectable first;
-    private Button Login;
-    // Start is called before the first frame update
+    public TMP_InputField first; // Đảm bảo rằng trường này được gán trong Inspector
+    public Button Login; // Đảm bảo rằng trường này được gán trong Inspector
+
+    // Start được gọi trước khi khung hình đầu tiên được cập nhật
     void Start()
     {
         eveSy = EventSystem.current;
-        first.Select();
 
+        // Kiểm tra nếu first đã được gán
+        if (first != null)
+        {
+            first.Select();
+        }
+        else
+        {
+            Debug.LogError("First Selectable không được gán trong Inspector.");
+        }
     }
 
-    // Update is called once per frame
+    // Update được gọi một lần mỗi khung hình
     void Update()
     {
-        if (Input.GetKey (KeyCode.Return))
+        if (Input.GetKey(KeyCode.Return))
         {
-            Login.onClick.Invoke();
+            // Kiểm tra nếu Login button đã được gán
+            if (Login != null)
+            {
+                Login.onClick.Invoke();
+            }
+            else
+            {
+                Debug.LogError("Login Button không được gán trong Inspector.");
+            }
         }
 
-        if (Input.GetKeyDown (KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             Selectable next = eveSy
                 .currentSelectedGameObject
@@ -38,7 +55,7 @@ public class login : MonoBehaviour
             if (next != null) next.Select();
         }
 
-        if (Input.GetKey (KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
             Selectable next = eveSy
                 .currentSelectedGameObject
@@ -47,16 +64,22 @@ public class login : MonoBehaviour
             if (next != null) next.Select();
         }
     }
+
     public void checkLogin()
     {
         var name = edtName.text;
         var pass = edtPass.text;
 
-        if (name.Equals ("beduyencute") && pass.Equals("141105") || name.Equals ("huy") && pass.Equals ("120797") || name.Equals ("hau") && pass.Equals ("160905") || name.Equals ("phuc") && pass.Equals ("130505"))
+        if (name.Equals("beduyencute") && pass.Equals("141105") ||
+            name.Equals("huy") && pass.Equals("120797") ||
+            name.Equals("hau") && pass.Equals("160905") ||
+            name.Equals("phuc") && pass.Equals("130505"))
         {
             SceneManager.LoadScene("Map 1");
-        } else {
-            txtMess.text = "Username or password not right";
+        }
+        else
+        {
+            txtMess.text = "Tên người dùng hoặc mật khẩu không đúng";
         }
     }
 }
