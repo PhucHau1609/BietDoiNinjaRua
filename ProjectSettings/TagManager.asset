@@ -72,6 +72,9 @@ TagManager:
   - name: Player
     uniqueID: 1149863179
     locked: 0
+  - name: GetFx
+    uniqueID: 2439747363
+    locked: 0
   - name: UI
     uniqueID: 2742550457
     locked: 0
