@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 151344779}
   - component: {fileID: 151344778}
   - component: {fileID: 151344777}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: txtmess
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1185,7 +1185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 369864358}
   - component: {fileID: 369864359}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1559,7 +1559,7 @@ GameObject:
   - component: {fileID: 425610093}
   - component: {fileID: 425610092}
   - component: {fileID: 425610091}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: btlogin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1691,7 +1691,7 @@ GameObject:
   - component: {fileID: 519143006}
   - component: {fileID: 519143008}
   - component: {fileID: 519143007}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2635,7 +2635,7 @@ GameObject:
   - component: {fileID: 822721944}
   - component: {fileID: 822721946}
   - component: {fileID: 822721945}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3272,10 +3272,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1064123733052845412, guid: 5774a64003c9144edafc53a6de8688b0, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064123733052845412, guid: 5774a64003c9144edafc53a6de8688b0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2443517469020984421, guid: 5774a64003c9144edafc53a6de8688b0, type: 3}
       propertyPath: m_Name
       value: LightGlobal
       objectReference: {fileID: 0}
+    - target: {fileID: 8855165032011584106, guid: 5774a64003c9144edafc53a6de8688b0, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957329848944181418, guid: 5774a64003c9144edafc53a6de8688b0, type: 3}
+      propertyPath: m_IsGlobal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957329848944181418, guid: 5774a64003c9144edafc53a6de8688b0, type: 3}
+      propertyPath: sharedProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: b1c7c049b01554046a199f14c8620a34, type: 2}
     - target: {fileID: 9086815962895025332, guid: 5774a64003c9144edafc53a6de8688b0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.1663094
@@ -3625,7 +3645,7 @@ GameObject:
   - component: {fileID: 1097968880}
   - component: {fileID: 1097968879}
   - component: {fileID: 1097968877}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: username
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3800,7 +3820,7 @@ GameObject:
   - component: {fileID: 1294834314}
   - component: {fileID: 1294834313}
   - component: {fileID: 1294834312}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Login
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4042,6 +4062,88 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1398411209}
   m_CullTransparentMesh: 1
+--- !u!1 &1435535310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1435535311}
+  - component: {fileID: 1435535312}
+  m_Layer: 0
+  m_Name: Light 2D
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1435535311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435535310}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2528433084715764993}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1435535312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435535310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
+  m_LightType: 1
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_LightVolumeIntensity: 1
+  m_LightVolumeIntensityEnabled: 0
+  m_ApplyToSortingLayers: 231ac4e8
+  m_LightCookieSprite: {fileID: 0}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowIntensityEnabled: 0
+  m_ShadowIntensity: 0.75
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0.0018997192, y: 0.00549984, z: 0}
+    m_Extent: {x: 9.3941, y: 5.4989, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -8.892457, y: -4.9924326, z: 0}
+  - {x: 8.888785, y: -4.993627, z: 0}
+  - {x: 8.897017, y: 5.0036845, z: 0}
+  - {x: -8.890033, y: 4.999623, z: 0}
 --- !u!1 &1439366437
 GameObject:
   m_ObjectHideFlags: 0
@@ -4053,7 +4155,7 @@ GameObject:
   - component: {fileID: 1439366440}
   - component: {fileID: 1439366439}
   - component: {fileID: 1439366438}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4188,7 +4290,7 @@ GameObject:
   - component: {fileID: 1450754464}
   - component: {fileID: 1450754463}
   - component: {fileID: 1450754462}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: btregister
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4333,7 +4435,7 @@ GameObject:
   - component: {fileID: 1459619241}
   - component: {fileID: 1459619240}
   - component: {fileID: 1459619238}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: pass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4762,7 +4864,7 @@ GameObject:
   - component: {fileID: 1686684374}
   - component: {fileID: 1686684372}
   - component: {fileID: 1686684373}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Placeholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4916,7 +5018,7 @@ GameObject:
   - component: {fileID: 1707583697}
   - component: {fileID: 1707583699}
   - component: {fileID: 1707583698}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: login
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5204,7 +5306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1947385018}
   - component: {fileID: 1947385019}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5258,7 +5360,7 @@ GameObject:
   - component: {fileID: 1966918607}
   - component: {fileID: 1966918605}
   - component: {fileID: 1966918606}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Placeholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5412,7 +5514,7 @@ GameObject:
   - component: {fileID: 2006786974}
   - component: {fileID: 2006786973}
   - component: {fileID: 2006786972}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5617,7 +5719,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -0.000015258789}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1435535311}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!199 &3188563219591805107
@@ -5659,8 +5762,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -55150619
-  m_SortingLayer: 1
+  m_SortingLayerID: -389801437
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_RenderMode: 0
   m_MeshDistribution: 0
