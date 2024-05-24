@@ -8,6 +8,9 @@ using UnityEngine.EventSystems;
 
 public class login : MonoBehaviour
 {
+    
+    [SerializeField] Animator animatorPlayerLogin;
+    [SerializeField] float timeWayPlay;
     public TMP_InputField edtName, edtPass;
     public TMP_Text txtMess;
     private EventSystem eveSy;
@@ -75,11 +78,21 @@ public class login : MonoBehaviour
             name.Equals("hau") && pass.Equals("160905") ||
             name.Equals("phuc") && pass.Equals("130505"))
         {
-            SceneManager.LoadScene("Map 1");
+            txtMess.text = "Bắt đầu nào....";
+            StartCoroutine(WayPlay());
         }
         else
         {
             txtMess.text = "Tên người dùng hoặc mật khẩu không đúng";
         }
     }
+
+    private IEnumerator WayPlay()
+    {
+        animatorPlayerLogin.SetTrigger("Play");
+        yield return new WaitForSeconds(timeWayPlay);
+        SceneManager.LoadScene("Map 1");
+
+    }
+
 }
