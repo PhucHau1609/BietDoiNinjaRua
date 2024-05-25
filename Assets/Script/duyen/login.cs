@@ -11,11 +11,13 @@ public class login : MonoBehaviour
     
     [SerializeField] Animator animatorPlayerLogin;
     [SerializeField] float timeWayPlay;
+
     public TMP_InputField edtName, edtPass;
     public TMP_Text txtMess;
     private EventSystem eveSy;
     public TMP_InputField first; // Đảm bảo rằng trường này được gán trong Inspector
-    public Button Login; // Đảm bảo rằng trường này được gán trong Inspector
+    public Button buttonLogin; // Đảm bảo rằng trường này được gán trong Inspector
+    public Button buttonRegister; //
 
     // Start được gọi trước khi khung hình đầu tiên được cập nhật
     void Start()
@@ -39,9 +41,9 @@ public class login : MonoBehaviour
         if (Input.GetKey(KeyCode.Return))
         {
             // Kiểm tra nếu Login button đã được gán
-            if (Login != null)
+            if (buttonLogin != null)
             {
-                Login.onClick.Invoke();
+                buttonLogin.onClick.Invoke();
             }
             else
             {
@@ -78,12 +80,14 @@ public class login : MonoBehaviour
             name.Equals("hau") && pass.Equals("160905") ||
             name.Equals("phuc") && pass.Equals("130505"))
         {
-            txtMess.text = "Bắt đầu nào....";
+            txtMess.text = "Let's start....";
+            buttonLogin.interactable = false;
+            buttonRegister.interactable = false;
             StartCoroutine(WayPlay());
         }
         else
         {
-            txtMess.text = "Tên người dùng hoặc mật khẩu không đúng";
+            txtMess.text = "Incorrect username or passward";
         }
     }
 
