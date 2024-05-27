@@ -23,7 +23,7 @@ TagManager:
   - Climbing
   - ColliderTilemap
   - Enemies
-  - 
+  - Trap
   - 
   - 
   - 
@@ -68,6 +68,9 @@ TagManager:
     locked: 0
   - name: Platforms
     uniqueID: 3856390555
+    locked: 0
+  - name: Trap
+    uniqueID: 223700903
     locked: 0
   - name: Player
     uniqueID: 1149863179

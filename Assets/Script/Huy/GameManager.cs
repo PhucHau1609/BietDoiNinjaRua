@@ -10,7 +10,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : Singleton<GameManager>
 {
     public int Coint;
-    public int Heart;
+    [HideInInspector]
+    [SerializeField]
+    public int Heart = 100;
     public Vector2 pointPositionPlayer;
 
     private void Start()
@@ -31,7 +33,6 @@ public class GameManager : Singleton<GameManager>
     public void ResetCointAndHeart()
     {
         Coint = 0;
-        Heart = 3;
     }
 
     public void SetCoint(int value)
@@ -39,9 +40,9 @@ public class GameManager : Singleton<GameManager>
         Coint += value;
     }
 
-    public void SetHeart(int value)
+    public void ReceiveDamage(int damage)
     {
-        Heart = value;
+        Heart -= damage;
     }
 
     public void PlayAgain()
