@@ -96,6 +96,7 @@ public class PlayerController : MonoBehaviour
         myRigidbody.velocity = climbVelocity;
         myRigidbody.gravityScale = 0f;
 
+
     }
 
     void Flip()
