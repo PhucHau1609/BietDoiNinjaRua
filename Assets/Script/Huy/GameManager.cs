@@ -11,6 +11,7 @@ public class GameManager : Singleton<GameManager>
 {
     public int Coint;
     public int Heart;
+    public Vector2 pointPositionPlayer;
 
     private void Start()
     {
