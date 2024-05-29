@@ -6,6 +6,7 @@ using System.Threading;
 using System.IO;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using TMPro;
 
 public class UI : MonoBehaviour
@@ -14,6 +15,7 @@ public class UI : MonoBehaviour
     [SerializeField] GameObject heart1;
     [SerializeField] GameObject heart2;
     [SerializeField] GameObject heart3;
+    [SerializeField] Slider sliderHeart;
 
     private void Update()
     {
@@ -22,6 +24,8 @@ public class UI : MonoBehaviour
     public void UpdateGoldUI()
     {
         goldText.text = GameManager.Instance.GetCoint().ToString();
+        sliderHeart.value = GameManager.Instance.GetHeart();
+
 
         if (GameManager.Instance.GetHeart() >= 3)
         {
