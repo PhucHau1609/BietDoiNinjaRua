@@ -11,6 +11,10 @@ public class PlayerDie : MonoBehaviour
     [SerializeField] float timeLoadGameOverPlayerDied;
     [SerializeField] CapsuleCollider2D capsuleCollider;
 
+    [Header("Damage: ")]
+    [SerializeField] int damageTrap = 1;
+    [SerializeField] int damageEnamy = 1;
+
     private Vector2 startCheckPoint;
     bool isTouchTrap;
 
@@ -34,13 +38,13 @@ public class PlayerDie : MonoBehaviour
         if (collision.gameObject.tag == "Trap" || collision.gameObject.tag == "Water")
         {
             isTouchTrap = true;
-            StartCoroutine(PlayerReceiveDamage(1));
+            StartCoroutine(PlayerReceiveDamage(damageTrap));
 
         }
 
         if (collision.gameObject.tag == "Enemy")
         {
-            GameManager.Instance.ReceiveDamage(20);
+            GameManager.Instance.ReceiveDamage(damageEnamy);
         }
 
         if (collision.gameObject.tag == "Ground")
