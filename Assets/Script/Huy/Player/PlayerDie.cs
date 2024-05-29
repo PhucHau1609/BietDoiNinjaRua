@@ -9,7 +9,6 @@ public class PlayerDie : MonoBehaviour
     [SerializeField] Animator aniPlayer;
     [SerializeField] float timeReTakeDamage;
     [SerializeField] float timeLoadGameOverPlayerDied;
-    [SerializeField] CapsuleCollider2D capsuleCollider;
 
     [Header("Damage: ")]
     [SerializeField] int damageTrap = 1;
@@ -20,7 +19,6 @@ public class PlayerDie : MonoBehaviour
 
     private void Start()
     {
-        capsuleCollider = GetComponent<CapsuleCollider2D>();
         startCheckPoint = player.transform.position;
     }
     private void Update()
