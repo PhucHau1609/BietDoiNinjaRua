@@ -31,27 +31,32 @@ public class PlayerDie : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Trap"
-            || collision.gameObject.tag == "Water"
-            || collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Trap" || collision.gameObject.tag == "Water")
         {
-            StartCoroutine(PlayerReceiveDamage());
             isTouchTrap = true;
+            StartCoroutine(PlayerReceiveDamage(1));
+
         }
+
+        if (collision.gameObject.tag == "Enemy")
+        {
+            GameManager.Instance.ReceiveDamage(20);
+        }
+
         if (collision.gameObject.tag == "Ground")
         {
             isTouchTrap = false;
         }
     }
 
-    private IEnumerator PlayerReceiveDamage()
+    private IEnumerator PlayerReceiveDamage(int damage)
     {
 
         Debug.Log("Touch Trap: " + isTouchTrap);
         while (isTouchTrap)
         {
             Debug.Log("Is Work");
-            GameManager.Instance.ReceiveDamage(1);
+            GameManager.Instance.ReceiveDamage(damage);
             aniPlayer.SetBool("ReceiveDamage", true);
             yield return new WaitForSeconds(timeReTakeDamage);
             aniPlayer.SetBool("ReceiveDamage", false);

@@ -438,6 +438,7 @@ MonoBehaviour:
   heart1: {fileID: 6261620275822808759}
   heart2: {fileID: 8551952962983045680}
   heart3: {fileID: 7510345642780829592}
+  sliderHeart: {fileID: 3873772110041997406}
 --- !u!1 &3718135625962104746
 GameObject:
   m_ObjectHideFlags: 0

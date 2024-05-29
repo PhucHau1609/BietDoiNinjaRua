@@ -9,10 +9,11 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
-    public int Coint;
-    [HideInInspector]
+   
+    [Header("Setting")]
     [SerializeField]
     public int Heart = 100;
+    public int Coint;
     public Vector2 pointPositionPlayer;
 
     private void Start()
