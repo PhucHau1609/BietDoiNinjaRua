@@ -9,12 +9,16 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
-   
-    [Header("Setting")]
+
     [SerializeField]
-    public int Heart = 100;
-    public int Coint;
-    public Vector2 pointPositionPlayer;
+    public int HeartStart = 100;
+    private int Heart;
+    private int Coint;
+
+    private void Update()
+    {
+        Debug.Log("Heart: " + Heart);
+    }
 
     private void Start()
     {
@@ -34,6 +38,7 @@ public class GameManager : Singleton<GameManager>
     public void ResetCointAndHeart()
     {
         Coint = 0;
+        Heart = HeartStart;
     }
 
     public void SetCoint(int value)

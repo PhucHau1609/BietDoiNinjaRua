@@ -1,20 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
-using System.Threading;
-using System.IO;
 
 public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
     public static T Instance { get; private set; }
+
+    [SerializeField] bool isDestroyOnLoad = true;
 
     protected virtual void Awake()
     {
         if (!Instance)
         {
             Instance = GetComponent<T>();
-            DontDestroyOnLoad(Instance);
+            if (!isDestroyOnLoad)
+            {
+                DontDestroyOnLoad(Instance);
+            }
         }
         else if (Instance != this)
         {

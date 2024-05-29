@@ -17,11 +17,6 @@ public class UI : MonoBehaviour
     [SerializeField] GameObject heart3;
     [SerializeField] Slider sliderHeart;
 
-    private void Start()
-    {
-        sliderHeart.maxValue = GameManager.Instance.GetHeart();
-    }
-
     private void Update()
     {
         UpdateGoldUI();
