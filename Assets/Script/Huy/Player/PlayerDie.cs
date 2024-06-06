@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,14 +13,16 @@ public class PlayerDie : MonoBehaviour
 
     [Header("Damage: ")]
     [SerializeField] int damageTrap = 1;
+    [SerializeField] int damageWater = 1;
     [SerializeField] int damageEnamy = 1;
 
-    private Vector2 startCheckPoint;
+    //private Vector2 startCheckPoint;
+
     bool isTouchTrap;
 
     private void Start()
     {
-        startCheckPoint = player.transform.position;
+        //startCheckPoint = player.transform.position;
     }
     private void Update()
     {
@@ -27,16 +30,23 @@ public class PlayerDie : MonoBehaviour
         {
             StartCoroutine(GameOver());
         }
-
+       
     }
-
+    
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Trap" || collision.gameObject.tag == "Water")
+        if (collision.gameObject.tag == "Trap")
         {
             isTouchTrap = true;
             StartCoroutine(PlayerReceiveDamage(damageTrap));
+
+        }
+
+        if (collision.gameObject.tag == "Water")
+        {
+            isTouchTrap = true;
+            StartCoroutine(ReceiveDamageInWater(damageWater));
 
         }
 
@@ -54,12 +64,21 @@ public class PlayerDie : MonoBehaviour
     private IEnumerator PlayerReceiveDamage(int damage)
     {
 
-        Debug.Log("Touch Trap: " + isTouchTrap);
         while (isTouchTrap)
         {
-            Debug.Log("Is Work");
             GameManager.Instance.ReceiveDamage(damage);
             aniPlayer.SetBool("ReceiveDamage", true);
+            yield return new WaitForSeconds(timeReTakeDamage);
+            aniPlayer.SetBool("ReceiveDamage", false);
+        }
+    }
+
+    private IEnumerator ReceiveDamageInWater(int damage)
+    {
+
+        while (isTouchTrap)
+        {
+            GameManager.Instance.ReceiveDamage(damage);
             yield return new WaitForSeconds(timeReTakeDamage);
             aniPlayer.SetBool("ReceiveDamage", false);
         }

@@ -98,5 +98,4 @@ public class login : MonoBehaviour
         SceneManager.LoadScene("Map 1");
 
     }
-
 }

@@ -60,6 +60,7 @@ public class GameManager : Singleton<GameManager>
     {
         Application.Quit();
         Debug.Log("Quit Game...");
+        SceneManager.LoadScene("Home");
     }
 
 }
