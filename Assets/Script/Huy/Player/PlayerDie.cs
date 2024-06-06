@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerDie : MonoBehaviour
 {
-    [SerializeField] GameObject player;
     [SerializeField] Animator aniPlayer;
     [SerializeField] float timeReTakeDamage;
     [SerializeField] float timeLoadGameOverPlayerDied;
@@ -16,6 +15,9 @@ public class PlayerDie : MonoBehaviour
     [SerializeField] int damageWater = 1;
     [SerializeField] int damageEnamy = 1;
 
+
+    private GameObject player;
+    Rigidbody2D playerRigi;
     //private Vector2 startCheckPoint;
 
     bool isTouchTrap;
@@ -23,6 +25,8 @@ public class PlayerDie : MonoBehaviour
     private void Start()
     {
         //startCheckPoint = player.transform.position;
+        player = GameObject.Find("Player");
+        playerRigi = player.GetComponent<Rigidbody2D>();
     }
     private void Update()
     {
@@ -43,13 +47,6 @@ public class PlayerDie : MonoBehaviour
 
         }
 
-        if (collision.gameObject.tag == "Water")
-        {
-            isTouchTrap = true;
-            StartCoroutine(ReceiveDamageInWater(damageWater));
-
-        }
-
         if (collision.gameObject.tag == "Enemy")
         {
             GameManager.Instance.ReceiveDamage(damageEnamy);
@@ -57,7 +54,33 @@ public class PlayerDie : MonoBehaviour
 
         if (collision.gameObject.tag == "Ground")
         {
+            playerRigi.gravityScale = 3;
+            playerRigi.drag = 0;
+            PlayerController.runSpeed = 6;
             isTouchTrap = false;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Water")
+        {
+            Debug.Log("InWater");
+            playerRigi.gravityScale = 0.5f; // Giảm trọng lực khi vào vùng nước
+            PlayerController.runSpeed = 2;
+            playerRigi.drag = 5;
+            //Debug.Log("In: " + PlayerController.runSpeed);
+        }
+    }
+   
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Water")
+        {
+            Debug.Log("OutWater");
+            playerRigi.gravityScale = 3; // Khôi phục trọng lực khi ra khỏi vùng nước
+            //Debug.Log("Out: " + PlayerController.runSpeed);
+
         }
     }
 
@@ -81,6 +104,7 @@ public class PlayerDie : MonoBehaviour
             GameManager.Instance.ReceiveDamage(damage);
             yield return new WaitForSeconds(timeReTakeDamage);
             aniPlayer.SetBool("ReceiveDamage", false);
+          
         }
     }
 

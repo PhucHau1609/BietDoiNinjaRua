@@ -32,7 +32,6 @@ public class LevelManager : MonoBehaviour
 
         if (collision.gameObject.tag == "Coint")
         {
-            Debug.Log("IsWork");
             getCointPTC.Play();
         }
     }

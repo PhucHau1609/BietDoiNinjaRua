@@ -11,6 +11,8 @@ TagManager:
   - NextLevel
   - Water
   - Trap
+  - InWater
+  - BackGround
   layers:
   - Default
   - TransparentFX
@@ -54,26 +56,26 @@ TagManager:
   - name: PTCCoint
     uniqueID: 3905165859
     locked: 0
-  - name: Item
-    uniqueID: 3650950301
-    locked: 0
-  - name: Water
-    uniqueID: 3582667123
-    locked: 0
-  - name: Ground
-    uniqueID: 848022741
+  - name: Trap
+    uniqueID: 223700903
     locked: 0
   - name: Climbing
     uniqueID: 4170248591
     locked: 0
-  - name: Platforms
-    uniqueID: 3856390555
-    locked: 0
-  - name: Trap
-    uniqueID: 223700903
+  - name: Water
+    uniqueID: 3582667123
     locked: 0
   - name: Player
     uniqueID: 1149863179
+    locked: 0
+  - name: Platforms
+    uniqueID: 3856390555
+    locked: 0
+  - name: Item
+    uniqueID: 3650950301
+    locked: 0
+  - name: Ground
+    uniqueID: 848022741
     locked: 0
   - name: GetFx
     uniqueID: 2439747363

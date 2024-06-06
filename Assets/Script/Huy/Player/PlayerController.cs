@@ -9,14 +9,14 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] float runSpeed = 10f;
+    //[SerializeField] float runSpeed = 6f;
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float climbSpeed = 5f;
     [SerializeField] float doubleJumpSpeed = 5f; 
     [SerializeField] private int maxJumps = 2;
 
- 
-
+    public static float runSpeed = 6f;
+    public static float runSpeedStart;
     private int jumpCount = 0;
     private Vector2 moveInput;
     private Rigidbody2D myRigidbody;
@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        runSpeedStart = runSpeed;
         myRigidbody = GetComponent<Rigidbody2D>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
         myAnimator = GetComponent<Animator>();
@@ -65,9 +66,14 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground")
             || collision.gameObject.CompareTag("Trap")
-            || collision.gameObject.CompareTag("Water"))
+            || collision.gameObject.CompareTag("InWater"))
         {
             jumpCount = 0;
+        }
+
+        if (collision.gameObject.CompareTag("InWater"))
+        {
+            
         }
     }
 
@@ -78,8 +84,6 @@ public class PlayerController : MonoBehaviour
         {
             myAnimator.SetBool("IdleClimbing", false);
             myAnimator.SetBool("IsClimbing", false);
-
-            myRigidbody.gravityScale = gravityScaleAtStart;
             return;
         }
 
@@ -98,7 +102,13 @@ public class PlayerController : MonoBehaviour
         myRigidbody.velocity = climbVelocity;
         myRigidbody.gravityScale = 0f;
 
+       
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("BackGround"))
 
+        myRigidbody.gravityScale = gravityScaleAtStart;
     }
 
     void Flip()
