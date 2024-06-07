@@ -17,7 +17,6 @@ public class GameManager : Singleton<GameManager>
 
     private void Update()
     {
-        Debug.Log("Heart: " + Heart);
     }
 
     private void Start()

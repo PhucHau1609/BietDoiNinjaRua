@@ -1,4 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
+using System.Threading;
+using System.IO;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
