@@ -83,9 +83,12 @@ TagManager:
   - name: GetFx
     uniqueID: 2439747363
     locked: 0
-  - name: UI
-    uniqueID: 2742550457
-    locked: 0
   - name: Enemies
     uniqueID: 3618601211
+    locked: 0
+  - name: Fx
+    uniqueID: 2789841355
+    locked: 0
+  - name: UI
+    uniqueID: 2742550457
     locked: 0
