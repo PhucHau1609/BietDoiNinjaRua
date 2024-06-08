@@ -1,79 +1,56 @@
-// using System.Diagnostics;
-// using System.IO;
-// using UnityEditor.VersionControl;
-// using UnityEngine;
-// public class StorageManager
-// {
-//     //doc ghi file
-//     public static bool SaveToFile(string filename, string json){
-//         try{
-//             var fileStream = new FileStream(filename, FileMode.Create);
-//             using (var writer = new StreamWriter(fileStream)){
-//                 writer.Write(json);
-//             }
-//             return true;
-//         }catch(System.Exception e){
-//             UnityEngine.Debug.LogError(message:"Error saving file: " + e.Message);
-//             return false;
-//         }
-//     }
-//     //load du lieu len
-//     public static string LoadFromFile (string filename){
-//         try{
-//             if (File.Exists(filename)){
-//                 var fileStream = new FileStream(filename, FileMode.Open);
-//                 using (var reader = new StreamReader(fileStream)){
-//                     return reader.ReadToEnd();
-//                 }
-//             } else {
-//                 UnityEngine.Debug.LogError(message:"File not found: " + filename);
-//                 return null;
-//             }
-//         }catch (System.Exception e){
-//             UnityEngine.Debug.LogError(message:"Error loading file: " + e.Message);
-//             return null;
-//         }
-//     }
-// }
-using UnityEngine;
-using System.IO;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public static class StorageManager
-{
-    // Save data to a file
-    public static bool SaveToFile(string filename, string json)
+    using System.IO;
+    using UnityEngine;
+    public class StorageManager
     {
-        try
+        public static bool SaveToFile(string filename, string json)
         {
-            File.WriteAllText(filename, json);
-            return true;
-        }
-        catch (System.Exception e)
-        {
-            Debug.LogError($"Error saving file '{filename}': {e.Message}");
-            return false;
-        }
-    }
-
-    // Load data from a file
-    public static string LoadFromFile(string filename)
-    {
-        try
-        {
-            if (File.Exists(filename))
+            try
             {
-                return File.ReadAllText(filename);
+                var fileStream = new FileStream(filename, FileMode.Create);
+                using (StreamWriter writer = new StreamWriter(fileStream))
+                {
+                    writer.Write(json);
+                }
+                return true;
             }
-            else
+            catch (System.Exception e)
             {
-                Debug.LogError($"File not found: {filename}");
+                Debug.Log("Error saving: " + e.Message);
+                return false;
+            }
+        }
+
+        public static string LoadFromFile(string filename)
+        {
+            try
+            {
+                if (File.Exists(filename))
+                {
+                    var fileStream = new FileStream(filename, FileMode.Open);
+                    using (StreamReader reader = new StreamReader(fileStream))
+                    {
+                        return reader.ReadToEnd();
+                    }
+                }
+                else
+                {
+                    Debug.Log("file not found: " + filename);
+                    return null;
+                }
+            }
+
+            catch (System.Exception e )
+            {
+                Debug.Log("error load: " + e.Message);
                 return null;
             }
-        }
-        catch (System.Exception e)
-        {
-            Debug.LogError($"Error loading file '{filename}': {e.Message}");
-            return null;
+           
         }
     }
-}
+

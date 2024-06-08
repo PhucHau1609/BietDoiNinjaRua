@@ -1,15 +1,15 @@
-using System;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
-[Serializable]
-public class GameData{
-    //luu thong tin game
-    public int coin = 0;
-    public string timePlayed;
-    public string name ; 
+[SerializeField]
+public class gamedata
+{
+    public string Usename;
+    public int Coint = 0;
+    public string timePlayer;
 }
-//nhung lan choi
-[Serializable]
-public class GameDataPlayed{
-    public List<GameData>plays;
+[SerializeField]
+public class gamedataplay{
+    public List<gamedata> plays;
 }

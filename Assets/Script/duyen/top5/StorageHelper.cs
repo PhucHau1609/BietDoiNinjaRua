@@ -5,16 +5,16 @@ using UnityEngine;
 public class StorageHelper
 {
     private readonly string filename = "game_data.txt";
-    public GameDataPlayed played;
+    public gamedataplay played;
     public void LoadData(){
-        played = new GameDataPlayed(){
-            plays = new List<GameData>()
+        played = new gamedataplay(){
+            plays = new List<gamedata>()
         };
         //doc chuoi tu file
         string dataAsJson = StorageManager.LoadFromFile(filename);
         if (dataAsJson != null){
             //chuyen chuoi json thanh object
-            played = JsonUtility.FromJson<GameDataPlayed>(dataAsJson);
+            played = JsonUtility.FromJson<gamedataplay>(dataAsJson);
         }
     }
     //luu du lieu lai

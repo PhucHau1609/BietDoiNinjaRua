@@ -11,7 +11,7 @@ public class login : MonoBehaviour
     
     [SerializeField] Animator animatorPlayerLogin;
     [SerializeField] float timeWayPlay;
-
+    [SerializeField]
     public TMP_InputField edtName, edtPass;
     public TMP_Text txtMess;
     private EventSystem eveSy;
@@ -97,5 +97,8 @@ public class login : MonoBehaviour
         yield return new WaitForSeconds(timeWayPlay);
         SceneManager.LoadScene("Map 1");
 
+    }
+    public string GetUsename(){
+        return name;
     }
 }
