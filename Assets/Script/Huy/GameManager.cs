@@ -12,6 +12,7 @@ public class GameManager : Singleton<GameManager>
 
     [SerializeField] int HeartStart = 100;
     [SerializeField] int LifeStart = 3;
+    [SerializeField] int BuletStart = 10;
     private int Heart;
     private int Life;
     private int Coint;
@@ -52,7 +53,7 @@ public class GameManager : Singleton<GameManager>
     {
         Coint = 0;
         Heart = HeartStart;
-        CountBulet = 3;
+        CountBulet = BuletStart;
     }
 
     public void ResetDie()
