@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,23 +5,34 @@ public class StorageHelper
 {
     private readonly string filename = "game_data.txt";
     public gamedataplay played;
-    public void LoadData(){
-        played = new gamedataplay(){
-            plays = new List<gamedata>()
-        };
-        //doc chuoi tu file
+
+    public void LoadData()
+    {
         string dataAsJson = StorageManager.LoadFromFile(filename);
-        if (dataAsJson != null){
-            //chuyen chuoi json thanh object
+        if (dataAsJson != null)
+        {
             played = JsonUtility.FromJson<gamedataplay>(dataAsJson);
         }
+        else
+        {
+            Debug.LogWarning("Không thể tải dữ liệu từ tệp " + filename + ". Tạo một bảng chơi mới.");
+            played = new gamedataplay
+            {
+                plays = new List<gamedata>()
+            };
+        }
     }
-    //luu du lieu lai
-    public void SaveData(){
-        //chuyen object thanh chuoi json
+
+    public void SaveData()
+    {
         string dataAsJson = JsonUtility.ToJson(played);
-        //luu chuoi json vao file
-        StorageManager.SaveToFile(filename,dataAsJson);
+        if (dataAsJson != null)
+        {
+            StorageManager.SaveToFile(filename, dataAsJson);
+        }
+        else
+        {
+            Debug.LogError("Không thể lưu dữ liệu vào tệp " + filename);
+        }
     }
 }
-

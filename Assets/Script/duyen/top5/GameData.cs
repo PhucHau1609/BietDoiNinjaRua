@@ -1,15 +1,15 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-[SerializeField]
+[System.Serializable]
 public class gamedata
 {
     public string Usename;
     public int Coint = 0;
     public string timePlayer;
 }
-[SerializeField]
-public class gamedataplay{
+
+[System.Serializable]
+public class gamedataplay
+{
     public List<gamedata> plays;
 }
