@@ -28,7 +28,7 @@ public class MOV : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, pointB.position, speed * Time.deltaTime);
             if (transform.position == pointB.position)
             {
-                movingToB = false; // Chuyển hướng ngược lại
+                movingToB = false; 
             }
         }
         else
@@ -37,7 +37,7 @@ public class MOV : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, pointA.position, speed * Time.deltaTime);
             if (transform.position == pointA.position)
             {
-                movingToB = true; // Chuyển hướng ngược lại
+                movingToB = true; 
             }
         }
     }

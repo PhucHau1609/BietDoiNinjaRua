@@ -5,11 +5,14 @@ using UnityEngine;
 public class EnemiesMoving : MonoBehaviour
 {
     [SerializeField] float movespeed = 1.0f;
+    private SpriteRenderer mySpriteRenderer;
+
     Rigidbody2D rigibody2d;
     // Start is called before the first frame update
     void Start()
     {
         rigibody2d = GetComponent<Rigidbody2D>();
+        mySpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -24,6 +27,6 @@ public class EnemiesMoving : MonoBehaviour
     }
     void FlipEnemiesFacing()
     {
-        transform.localScale = new Vector2(4 * -(Mathf.Sign(rigibody2d.velocity.x)),4f);
+        //transform.localScale = new Vector2(4 * -(Mathf.Sign(rigibody2d.velocity.x)),4f);
     }    
 }

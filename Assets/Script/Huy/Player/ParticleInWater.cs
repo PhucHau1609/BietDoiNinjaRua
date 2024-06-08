@@ -18,7 +18,6 @@ public class ParticleInWater : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("IsWWork1");
         if (collision.gameObject.CompareTag("Water"))
         {
             inWater.Play();
@@ -27,7 +26,6 @@ public class ParticleInWater : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("IsWWork2");
         if (collision.gameObject.CompareTag("Water"))
         {
             inWater.Stop();

@@ -4,13 +4,11 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    public float timeRemaining = 60f; // Thời gian bắt đầu, ví dụ 60 giây
-    public bool timerIsRunning = false; // Trạng thái của timer
-    public TMP_Text timeText; // Text để hiển thị thời gian
-
+    public float timeRemaining = 60f;
+    public bool timerIsRunning = false;
+    public TMP_Text timeText; 
     void Start()
     {
-        // Bắt đầu bộ đếm thời gian khi bắt đầu game
         timerIsRunning = true;
     }
 
@@ -41,7 +39,7 @@ public class Timer : MonoBehaviour
         float minutes = Mathf.FloorToInt(timeToDisplay / 60); // Tính số phút
         float seconds = Mathf.FloorToInt(timeToDisplay % 60); // Tính số giây
 
-        // Cập nhật Text hiển thị
+
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }

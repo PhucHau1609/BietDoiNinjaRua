@@ -9,7 +9,9 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    [SerializeField] Animator fxAddHeart;
     [SerializeField] ParticleSystem getCointPTC;
+    [SerializeField] ParticleSystem getArrowPTC;
 
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -33,6 +35,17 @@ public class LevelManager : MonoBehaviour
         if (collision.gameObject.tag == "Coint")
         {
             getCointPTC.Play();
+        }
+
+        if (collision.gameObject.tag == "Heart")
+        {
+            //addHeartPTC.Play();
+            fxAddHeart.SetTrigger("Get");
+        }
+
+        if (collision.gameObject.tag == "Arrow")
+        {
+            getArrowPTC.Play();
         }
     }
 

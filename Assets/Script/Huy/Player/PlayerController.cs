@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float doubleJumpSpeed = 5f; 
     [SerializeField] private int maxJumps = 2;
 
+
+    public static bool climbLadder = true;
     public static float runSpeed = 6f;
     public static float runSpeedStart;
     private int jumpCount = 0;
@@ -82,6 +84,7 @@ public class PlayerController : MonoBehaviour
 
         if (!myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Climbing")))
         {
+            climbLadder = false;
             myAnimator.SetBool("IdleClimbing", false);
             myAnimator.SetBool("IsClimbing", false);
             return;
@@ -90,8 +93,10 @@ public class PlayerController : MonoBehaviour
         myAnimator.SetBool("IdleClimbing", true);
         if (moveInput.y != 0)
         {
+            climbLadder = true;
             myAnimator.SetBool("IsClimbing", true);
             myAnimator.SetBool("IdleClimbing", false);
+
         }
         else
         {
@@ -104,6 +109,7 @@ public class PlayerController : MonoBehaviour
 
        
     }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("BackGround"))
@@ -116,10 +122,12 @@ public class PlayerController : MonoBehaviour
         if (moveInput.x == -1)
         {
             mySpriteRenderer.flipX = true;
+            PlayerDie.isLeft = true;
         }
         else if (moveInput.x == 1)
         {
             mySpriteRenderer.flipX = false;
+            PlayerDie.isLeft = false;
         }
     }
 

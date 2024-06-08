@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Map 3.unity
     guid: 86d052525809e9c438aa7285266e4f06
   - enabled: 1
+    path: Assets/Scenes/Map Boss.unity
+    guid: 047c3056c3a3cd34abaf7fae0348543b
+  - enabled: 1
     path: Assets/Scenes/WinScene.unity
     guid: 9ff634115e44a4660a28389cc287b3c3
   - enabled: 1

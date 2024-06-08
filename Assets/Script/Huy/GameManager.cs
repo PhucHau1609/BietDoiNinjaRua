@@ -14,6 +14,7 @@ public class GameManager : Singleton<GameManager>
     public int HeartStart = 100;
     private int Heart;
     private int Coint;
+    private int CountBulet;
 
     private void Update()
     {
@@ -34,10 +35,17 @@ public class GameManager : Singleton<GameManager>
         return Heart;
     }
 
+    public int GetCountBulet()
+    {
+        return CountBulet;
+    }
+
     public void ResetCointAndHeart()
     {
         Coint = 0;
         Heart = HeartStart;
+        CountBulet = 3;
+        
     }
 
     public void SetCoint(int value)
@@ -45,9 +53,24 @@ public class GameManager : Singleton<GameManager>
         Coint += value;
     }
 
+    public void SetCountBuletCong(int value)
+    {
+        CountBulet += value;
+    }
+
+    public void SetCountBuletTru(int value)
+    {
+        CountBulet -= value;
+    }
+
     public void ReceiveDamage(int damage)
     {
         Heart -= damage;
+    }
+
+    public void AddHeart(int value)
+    {
+        Heart += value;
     }
 
     public void PlayAgain()

@@ -407,13 +407,13 @@ TextureImporter:
       name: Sprite sheet for Basic Pack_14
       rect:
         serializedVersion: 2
-        x: 466
-        y: 228
-        width: 30
-        height: 7
+        x: 481
+        y: 229
+        width: 14
+        height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 1, y: 2, z: 1, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0

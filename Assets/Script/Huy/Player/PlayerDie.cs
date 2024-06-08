@@ -1,7 +1,10 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
+using System.Threading;
+using System.IO;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class PlayerDie : MonoBehaviour
@@ -10,12 +13,16 @@ public class PlayerDie : MonoBehaviour
     [SerializeField] float timeReTakeDamage;
     [SerializeField] float timeLoadGameOverPlayerDied;
 
-    [Header("Damage: ")]
+    [Header("Damage")]
     [SerializeField] int damageTrap = 1;
     [SerializeField] int damageWater = 1;
     [SerializeField] int damageEnamy = 1;
+    [SerializeField] int damageBulet = 5;
 
+    [Header("Bulet")]
+    [SerializeField] GameObject buletGOJ;
 
+    public static bool isLeft = false;
     private GameObject player;
     Rigidbody2D playerRigi;
     //private Vector2 startCheckPoint;
@@ -27,16 +34,40 @@ public class PlayerDie : MonoBehaviour
         //startCheckPoint = player.transform.position;
         player = GameObject.Find("Player");
         playerRigi = player.GetComponent<Rigidbody2D>();
+
+      
     }
+
+
+
     private void Update()
     {
         if (GameManager.Instance.GetHeart() <= 0)
         {
             StartCoroutine(GameOver());
         }
-       
+
+        FireBullet();
     }
-    
+
+  
+    // player ban dang
+    void FireBullet()
+    {
+        if (PlayerController.climbLadder == false)
+        {
+            if (GameManager.Instance.GetCountBulet() >= 1 && Input.GetKeyDown(KeyCode.E))
+            {
+                var player = transform.position;
+                player.x = isLeft ? player.x -= 0f : player.x += 0f;
+                player.y = isLeft ? player.y -= 0.2f : player.y -= 0.2f;
+                GameManager.Instance.SetCountBuletTru(1);
+                Instantiate(buletGOJ, player, Quaternion.identity);
+                aniPlayer.SetTrigger("Attack");
+
+            }
+        }
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -44,12 +75,11 @@ public class PlayerDie : MonoBehaviour
         {
             isTouchTrap = true;
             StartCoroutine(PlayerReceiveDamage(damageTrap));
-
         }
-
-        if (collision.gameObject.tag == "Enemy")
+        else if (collision.gameObject.tag == "Enemy")
         {
-            GameManager.Instance.ReceiveDamage(damageEnamy);
+            StartCoroutine(PlayerReceiveDamage(damageEnamy));
+            //GameManager.Instance.ReceiveDamage(damageEnamy);
         }
 
         if (collision.gameObject.tag == "Ground")
@@ -59,8 +89,14 @@ public class PlayerDie : MonoBehaviour
             PlayerController.runSpeed = 6;
             isTouchTrap = false;
         }
+
+        if (collision.gameObject.tag == "Hert")
+        {
+
+        }
     }
 
+    // xu ly playercham vao nuoc
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Water")
@@ -80,7 +116,6 @@ public class PlayerDie : MonoBehaviour
             Debug.Log("OutWater");
             playerRigi.gravityScale = 3; // Khôi phục trọng lực khi ra khỏi vùng nước
             //Debug.Log("Out: " + PlayerController.runSpeed);
-
         }
     }
 
@@ -96,17 +131,17 @@ public class PlayerDie : MonoBehaviour
         }
     }
 
-    private IEnumerator ReceiveDamageInWater(int damage)
-    {
+    //private IEnumerator ReceiveDamageInWater(int damage)
+    //{
 
-        while (isTouchTrap)
-        {
-            GameManager.Instance.ReceiveDamage(damage);
-            yield return new WaitForSeconds(timeReTakeDamage);
-            aniPlayer.SetBool("ReceiveDamage", false);
+    //    while (isTouchTrap)
+    //    {
+    //        GameManager.Instance.ReceiveDamage(damage);
+    //        yield return new WaitForSeconds(timeReTakeDamage);
+    //        aniPlayer.SetBool("ReceiveDamage", false);
           
-        }
-    }
+    //    }
+    //}
 
 
 
