@@ -5207,7 +5207,7 @@ MonoBehaviour:
   - {x: -0.2020027, y: -0.5344861, z: 0}
   m_ShapePathHash: -1320773884
   m_Mesh: {fileID: 0}
-  m_InstanceId: -366422
+  m_InstanceId: -1312
   m_LocalBounds:
     m_Center: {x: 0.0007920563, y: -0.065983266, z: 0}
     m_Extent: {x: 0.3363024, y: 0.46861002, z: 0}
@@ -5678,6 +5678,7 @@ MonoBehaviour:
   aniPlayer: {fileID: 2597524313966782217}
   timeReTakeDamage: 2
   timeLoadGameOverPlayerDied: 0.5
+  player: {fileID: 1165992207888900492}
   damageTrap: 20
   damageWater: 15
   damageEnemy: 30

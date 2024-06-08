@@ -12,6 +12,7 @@ public class PlayerDie : MonoBehaviour
     [SerializeField] Animator aniPlayer;
     [SerializeField] float timeReTakeDamage;
     [SerializeField] float timeLoadGameOverPlayerDied;
+    [SerializeField] GameObject player;
 
     [Header("Damage")]
     [SerializeField] int damageTrap = 1;
@@ -23,34 +24,25 @@ public class PlayerDie : MonoBehaviour
     [SerializeField] GameObject buletGOJ;
 
     public static bool isLeft = false;
-    private GameObject player;
+   
     Rigidbody2D playerRigi;
-    //private Vector2 startCheckPoint;
+    private Vector2 startCheckPoint;
 
     bool isTouchTrap;
 
     private void Start()
     {
-        //startCheckPoint = player.transform.position;
+        startCheckPoint = player.transform.position;
         player = GameObject.Find("Player");
         playerRigi = player.GetComponent<Rigidbody2D>();
-
-      
     }
-
-
 
     private void Update()
     {
-        if (GameManager.Instance.GetHeart() <= 0)
-        {
-            StartCoroutine(GameOver());
-        }
-
         FireBullet();
+        GameOver();
     }
 
-  
     // player ban dang
     void FireBullet()
     {
@@ -90,7 +82,7 @@ public class PlayerDie : MonoBehaviour
             isTouchTrap = false;
         }
 
-        if (collision.gameObject.tag == "Hert")
+        if (collision.gameObject.tag == "Heart")
         {
 
         }
@@ -128,6 +120,7 @@ public class PlayerDie : MonoBehaviour
             aniPlayer.SetBool("ReceiveDamage", true);
             yield return new WaitForSeconds(timeReTakeDamage);
             aniPlayer.SetBool("ReceiveDamage", false);
+            PlaerDie();
         }
 
     }
@@ -138,14 +131,40 @@ public class PlayerDie : MonoBehaviour
         aniPlayer.SetBool("ReceiveDamage", true);
         yield return new WaitForSeconds(timeReTakeDamage);
         aniPlayer.SetBool("ReceiveDamage", false);
+        PlaerDie();
+
     }
 
-    private IEnumerator GameOver()
+    private void PlaerDie()
     {
-        //crossFadeNextLevel.SetTrigger("Start");
-        //FindObjectOfType<AudioManager>().Play("PlayerDeath");
-        yield return new WaitForSeconds(timeLoadGameOverPlayerDied);
-        Destroy(player);
-        SceneManager.LoadScene("GameOver");
+        if (GameManager.Instance.GetHeart() < 1)
+        {
+            if (GameManager.Instance.GetLife() >= 1)
+            {
+                GameManager.Instance.SetLifeTru(1);
+                player.transform.position = startCheckPoint;
+                GameManager.Instance.ResetDie();
+
+            }
+        }
     }
+
+    private void GameOver()
+    {
+        if (GameManager.Instance.GetLife() < 1)
+        {
+            Destroy(player);
+            SceneManager.LoadScene("GameOver");
+        }
+    }
+
+
+    //private IEnumerator GameOver()
+    //{
+    //    //crossFadeNextLevel.SetTrigger("Start");
+    //    //FindObjectOfType<AudioManager>().Play("PlayerDeath");
+    //    yield return new WaitForSeconds(timeLoadGameOverPlayerDied);
+    //    Destroy(player);
+    //    SceneManager.LoadScene("GameOver");
+    //}
 }

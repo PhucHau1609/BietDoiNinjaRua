@@ -44,4 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ffa2c8912974d66a0eb8bbac66f8ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDestroyOnLoad: 0
   HeartStart: 100
+  LifeStart: 3
