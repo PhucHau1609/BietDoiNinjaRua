@@ -23,7 +23,6 @@ public class login : MonoBehaviour
     void Start()
     {
         eveSy = EventSystem.current;
-
         // Kiểm tra nếu first đã được gán
         if (first != null)
         {
@@ -80,6 +79,7 @@ public class login : MonoBehaviour
             name.Equals("hau") && pass.Equals("160905") ||
             name.Equals("phuc") && pass.Equals("130505"))
         {
+            
             txtMess.text = "Let's start....";
             buttonLogin.interactable = false;
             buttonRegister.interactable = false;
@@ -97,8 +97,5 @@ public class login : MonoBehaviour
         yield return new WaitForSeconds(timeWayPlay);
         SceneManager.LoadScene("Map 1");
 
-    }
-    public string GetUsename(){
-        return name;
     }
 }

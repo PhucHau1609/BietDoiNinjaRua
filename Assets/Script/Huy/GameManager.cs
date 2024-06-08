@@ -14,7 +14,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] int LifeStart = 3;
     private int Heart;
     private int Life;
-    public int Coint;
+    private int Coint;
     private int CountBulet;
 
 
