@@ -8,6 +8,7 @@ public class EnemiesGetDamage : MonoBehaviour
     [SerializeField] float heartEnemies;
     [SerializeField] float currenHeartEnemies;
     [SerializeField] Slider heartBar;
+    [SerializeField] ParticleSystem enemyGetDamageFx;
 
     private void Start()
     {
@@ -20,25 +21,11 @@ public class EnemiesGetDamage : MonoBehaviour
         heartBar.value = currenHeartEnemies;
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    Debug.Log("IsWork1");
-    //    if (collision.gameObject.CompareTag("Bulet"))
-    //    {
-    //        Debug.Log("IsWork1.1");
-    //        currenHeartEnemies -= BuletSC.damageBulet;
-    //        if (heartEnemies <= 0)
-    //        {
-    //            Destroy(gameObject);
-
-    //        }
-    //    }
-    //}
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Bulet"))
         {
+            enemyGetDamageFx.Play();
             currenHeartEnemies -= BuletSC.damageBulet;
             if (currenHeartEnemies <= 0)
             {

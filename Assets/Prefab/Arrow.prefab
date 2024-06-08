@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aed4c4704e0084bfd84e1479c2afe62c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  setArrow: 5
+  setArrow: 10
 --- !u!1 &556294318068688762
 GameObject:
   m_ObjectHideFlags: 0
