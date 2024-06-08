@@ -11,8 +11,9 @@ using TMPro;
 
 public class UI : MonoBehaviour
 {
-    [SerializeField] private TMP_Text goldText;
-    [SerializeField] private TMP_Text BuletText;
+    [SerializeField] TMP_Text goldText;
+    [SerializeField] TMP_Text BuletText;
+    [SerializeField] TMP_Text LifeText;
     [SerializeField] GameObject heart1;
     [SerializeField] GameObject heart2;
     [SerializeField] GameObject heart3;
@@ -24,6 +25,7 @@ public class UI : MonoBehaviour
     }
     public void UpdateGoldUI()
     {
+        LifeText.text = GameManager.Instance.GetLife().ToString();
         goldText.text = GameManager.Instance.GetCoint().ToString();
         BuletText.text = GameManager.Instance.GetCountBulet().ToString();
         sliderHeart.value = GameManager.Instance.GetHeart();

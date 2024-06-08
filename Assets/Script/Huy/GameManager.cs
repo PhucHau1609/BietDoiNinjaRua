@@ -10,11 +10,13 @@ using UnityEngine.SceneManagement;
 public class GameManager : Singleton<GameManager>
 {
 
-    [SerializeField]
-    public int HeartStart = 100;
+    [SerializeField] int HeartStart = 100;
+    [SerializeField] int LifeStart = 3;
     private int Heart;
+    private int Life;
     private int Coint;
     private int CountBulet;
+
 
     private void Update()
     {
@@ -22,7 +24,8 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
-        ResetCointAndHeart();
+        Life = LifeStart;
+        Reset();
     }
 
     public int GetCoint()
@@ -35,17 +38,38 @@ public class GameManager : Singleton<GameManager>
         return Heart;
     }
 
+    public int GetLife()
+    {
+        return Life;
+    }
+
     public int GetCountBulet()
     {
         return CountBulet;
     }
 
-    public void ResetCointAndHeart()
+    public void Reset()
     {
         Coint = 0;
         Heart = HeartStart;
         CountBulet = 3;
-        
+    }
+
+    public void ResetDie()
+    {
+        Coint = 0;
+        Heart = HeartStart;
+        CountBulet = 0;
+    }
+
+    public void SetLifeCong(int value)
+    {
+        Life += value;
+    }
+
+    public void SetLifeTru(int value)
+    {
+        Life -= value;
     }
 
     public void SetCoint(int value)
