@@ -16,7 +16,7 @@ public class PlayerDie : MonoBehaviour
     [Header("Damage")]
     [SerializeField] int damageTrap = 1;
     [SerializeField] int damageWater = 1;
-    [SerializeField] int damageEnamy = 1;
+    [SerializeField] int damageEnemy = 1;
     [SerializeField] int damageBulet = 5;
 
     [Header("Bulet")]
@@ -76,9 +76,10 @@ public class PlayerDie : MonoBehaviour
             isTouchTrap = true;
             StartCoroutine(PlayerReceiveDamage(damageTrap));
         }
-        else if (collision.gameObject.tag == "Enemy")
+
+        if (collision.gameObject.tag == "Enemy")
         {
-            StartCoroutine(PlayerReceiveDamageEnemy(damageEnamy));
+            StartCoroutine(PlayerReceiveDamageEnemy(damageEnemy));
         }
 
         if (collision.gameObject.tag == "Ground")
