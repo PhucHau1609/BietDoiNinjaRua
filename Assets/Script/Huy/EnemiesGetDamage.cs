@@ -37,10 +37,8 @@ public class EnemiesGetDamage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("IsWork2");
         if (collision.gameObject.CompareTag("Bulet"))
         {
-            Debug.Log("IsWork2.1");
             currenHeartEnemies -= BuletSC.damageBulet;
             if (currenHeartEnemies <= 0)
             {

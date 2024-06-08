@@ -69,7 +69,7 @@ public class PlayerDie : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Trap")
         {
@@ -78,8 +78,7 @@ public class PlayerDie : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Enemy")
         {
-            StartCoroutine(PlayerReceiveDamage(damageEnamy));
-            //GameManager.Instance.ReceiveDamage(damageEnamy);
+            StartCoroutine(PlayerReceiveDamageEnemy(damageEnamy));
         }
 
         if (collision.gameObject.tag == "Ground")
@@ -129,21 +128,16 @@ public class PlayerDie : MonoBehaviour
             yield return new WaitForSeconds(timeReTakeDamage);
             aniPlayer.SetBool("ReceiveDamage", false);
         }
+
     }
 
-    //private IEnumerator ReceiveDamageInWater(int damage)
-    //{
-
-    //    while (isTouchTrap)
-    //    {
-    //        GameManager.Instance.ReceiveDamage(damage);
-    //        yield return new WaitForSeconds(timeReTakeDamage);
-    //        aniPlayer.SetBool("ReceiveDamage", false);
-          
-    //    }
-    //}
-
-
+    private IEnumerator PlayerReceiveDamageEnemy(int damage)
+    {
+        GameManager.Instance.ReceiveDamage(damage);
+        aniPlayer.SetBool("ReceiveDamage", true);
+        yield return new WaitForSeconds(timeReTakeDamage);
+        aniPlayer.SetBool("ReceiveDamage", false);
+    }
 
     private IEnumerator GameOver()
     {
