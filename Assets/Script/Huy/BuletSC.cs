@@ -10,13 +10,15 @@ public class BuletSC : MonoBehaviour
     public static float damageBulet;
     private Vector2 moveBulet;
     private SpriteRenderer spBulet;
-
+    private BoxCollider2D myBoxCollider2D;
+    private bool isTouch;
     void Start()
     {
         damageBulet = setDamageBulet;
         Destroy(gameObject, buletTimeDestroy);
         moveBulet = PlayerDie.isLeft ? Vector2.left : Vector2.right;
         spBulet = GetComponent<SpriteRenderer>();
+        myBoxCollider2D = GetComponent<BoxCollider2D>();
 
     }
 
@@ -27,16 +29,14 @@ public class BuletSC : MonoBehaviour
         {
             spBulet.flipX = true;
         }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Boss"))
         {
-            Debug.Log("IsWork0");
             Destroy(gameObject);
-
         }
     }
-
 }

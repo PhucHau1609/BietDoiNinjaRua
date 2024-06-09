@@ -380,7 +380,7 @@ Transform:
   m_GameObject: {fileID: 5389003440296603026}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.547, y: 0, z: 0}
+  m_LocalPosition: {x: 1.444, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -618,7 +618,7 @@ Transform:
   m_GameObject: {fileID: 7325958831668095396}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -665,8 +665,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1149863179
-  m_SortingLayer: 6
+  m_SortingLayerID: -676366085
+  m_SortingLayer: 10
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: f556a97d91d43734b82c5381ccbd431e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -687,7 +687,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7325958831668095396}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -705,7 +705,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &3725307869430883575
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -738,8 +738,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0011078443, y: -0.019941399}
-  m_Size: {x: 0.1289802, y: 0.12011783}
+  m_Offset: {x: -0.0011078428, y: -0.0072758207}
+  m_Size: {x: 0.14544924, y: 0.14544924}
   m_Direction: 1
 --- !u!95 &1157569379475492398
 Animator:
@@ -833,9 +833,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heartEnemies: 20
-  currenHeartEnemies: 20
+  showCurrenHeartEnemies: 0
+  timeDestroyObj: 0.5
   heartBar: {fileID: 8189142370946326129}
   enemyGetDamageFx: {fileID: 5735100807634825763}
+  enemyTransform: {fileID: 0}
 --- !u!114 &4130233682771667644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5706,7 +5708,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1855219933
-  m_SortingLayer: 10
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
