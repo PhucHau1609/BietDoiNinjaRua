@@ -6,15 +6,19 @@ using UnityEngine.UI;
 
 public class EnemiesGetDamage : MonoBehaviour
 {
+    [Header("Set")]
     [SerializeField] float heartEnemies;
     [SerializeField] float showCurrenHeartEnemies;
     [SerializeField] float timeDestroyObj = 0.5f;
+    [SerializeField] float gravityScaleDie = 1;
     //[SerializeField] float deathDelayTime = 0.5f;
+
+    [Header("Get")]
     [SerializeField] Slider heartBar;
     [SerializeField] ParticleSystem enemyGetDamageFx;
+    [SerializeField] Rigidbody2D rigiEnemyDie;
 
     public static float currenHeartEnemies;
-    public static bool enemyDie = false;
 
     private void Awake()
     {
@@ -47,7 +51,8 @@ public class EnemiesGetDamage : MonoBehaviour
 
     private void EnemiesDie()
     {
-        enemyDie = true;
+        rigiEnemyDie.gravityScale = gravityScaleDie;
+
         // Tắt tất cả các Collider2D
         Collider2D[] colliders = GetComponentsInChildren<Collider2D>();
         foreach (Collider2D collider in colliders)

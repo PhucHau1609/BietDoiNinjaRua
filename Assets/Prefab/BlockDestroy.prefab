@@ -144,6 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ab959a21907675489d056d34ce397f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  setATBL: {fileID: 12369700014975377}
+  timeOnAT: 1
   TimeStoneDestroy: 0.3
 --- !u!95 &7286720586029461667
 Animator:

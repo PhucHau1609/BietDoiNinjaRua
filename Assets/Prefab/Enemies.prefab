@@ -835,9 +835,10 @@ MonoBehaviour:
   heartEnemies: 20
   showCurrenHeartEnemies: 0
   timeDestroyObj: 0.5
+  gravityScaleDie: 1
   heartBar: {fileID: 8189142370946326129}
   enemyGetDamageFx: {fileID: 5735100807634825763}
-  enemyTransform: {fileID: 0}
+  rigiEnemyDie: {fileID: 1608162214795416759}
 --- !u!114 &4130233682771667644
 MonoBehaviour:
   m_ObjectHideFlags: 0
