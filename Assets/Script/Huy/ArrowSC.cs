@@ -5,7 +5,7 @@ using UnityEngine;
 public class ArrowSC : MonoBehaviour
 {
     [SerializeField] int setArrow = 5;
-    
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -14,5 +14,4 @@ public class ArrowSC : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
 }

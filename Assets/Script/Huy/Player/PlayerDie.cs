@@ -69,7 +69,7 @@ public class PlayerDie : MonoBehaviour
             StartCoroutine(PlayerReceiveDamage(damageTrap));
         }
 
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Boss")
         {
             StartCoroutine(PlayerReceiveDamageEnemy(damageEnemy));
         }
@@ -93,7 +93,6 @@ public class PlayerDie : MonoBehaviour
     {
         if (collision.gameObject.tag == "Water")
         {
-            Debug.Log("InWater");
             playerRigi.gravityScale = 0.5f; // Giảm trọng lực khi vào vùng nước
             PlayerController.runSpeed = 2;
             playerRigi.drag = 5;
@@ -105,7 +104,6 @@ public class PlayerDie : MonoBehaviour
     {
         if (collision.gameObject.tag == "Water")
         {
-            Debug.Log("OutWater");
             playerRigi.gravityScale = 3; // Khôi phục trọng lực khi ra khỏi vùng nước
             //Debug.Log("Out: " + PlayerController.runSpeed);
         }

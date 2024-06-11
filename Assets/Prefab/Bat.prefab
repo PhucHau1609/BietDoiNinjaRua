@@ -5343,7 +5343,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1855219933
-  m_SortingLayer: 10
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -5501,14 +5501,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5533781156839701089}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -5519,7 +5519,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &7325528185949788392
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5645,7 +5645,7 @@ MonoBehaviour:
   - {x: 0.009091735, y: -0.043922663, z: -0.000000059604645}
   m_ShapePathHash: 1422573613
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1478
+  m_InstanceId: -340812
   m_LocalBounds:
     m_Center: {x: -0.0017277002, y: 0.0007611513, z: 0}
     m_Extent: {x: 0.073088884, y: 0.044683814, z: 0}
@@ -5662,9 +5662,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heartEnemies: 50
-  currenHeartEnemies: 50
+  showCurrenHeartEnemies: 0
+  timeDestroyObj: 1
+  gravityScaleDie: 1
   heartBar: {fileID: 1604662266466534658}
   enemyGetDamageFx: {fileID: 3557754226276321295}
+  rigiEnemyDie: {fileID: 7889493918300926901}
 --- !u!114 &2159492704111536193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5780,7 +5783,7 @@ Transform:
   m_GameObject: {fileID: 7933729365217438768}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.032, y: 0, z: 0}
+  m_LocalPosition: {x: 1.18, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
