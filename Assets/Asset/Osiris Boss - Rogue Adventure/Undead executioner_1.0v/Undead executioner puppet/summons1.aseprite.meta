@@ -432,6 +432,7 @@ ScriptedImporter:
     cells:
     - name: summons1_Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 19
         y: 12
@@ -440,6 +441,7 @@ ScriptedImporter:
       spriteId: b23821f7e85f52d498de01a162c809ed
     - name: summons1_Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 19
         y: 12
@@ -448,6 +450,7 @@ ScriptedImporter:
       spriteId: f6588754330787f4383c92359d7e4ea2
     - name: summons1_Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 19
         y: 12
@@ -456,6 +459,7 @@ ScriptedImporter:
       spriteId: 3f5d789b12de48b4da7fcac6db3bdc66
     - name: summons1_Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 19
         y: 12
@@ -464,6 +468,7 @@ ScriptedImporter:
       spriteId: c22dc380cfa9d6d42ab6a2055f7d8811
     - name: summons1_Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 19
         y: 12
@@ -472,6 +477,7 @@ ScriptedImporter:
       spriteId: 4f0e0060e5c35014b83cc8312d956867
     - name: summons1_Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 19
         y: 12
@@ -480,6 +486,7 @@ ScriptedImporter:
       spriteId: e48cc6d614cfca44db5c6a53d943ded5
     - name: summons1_Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 19
         y: 12
@@ -488,6 +495,7 @@ ScriptedImporter:
       spriteId: a60a8cc0ea4be6a45a50e7f39001faf6
     - name: summons1_Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 20
         y: 12
@@ -496,6 +504,7 @@ ScriptedImporter:
       spriteId: 8ad4364bf5b314b4381e9eef46f4d76f
     - name: summons1_Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 20
         y: 12
@@ -504,6 +513,7 @@ ScriptedImporter:
       spriteId: dae51252a769f40479d7ef5bec30e672
     - name: summons1_Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 13
@@ -512,6 +522,7 @@ ScriptedImporter:
       spriteId: d3ced13b5438a4a47b36fe56f52b7091
     - name: summons1_Frame_10
       frameIndex: 10
+      additiveSortOrder: 0
       cellRect:
         x: 19
         y: 12
@@ -520,6 +531,7 @@ ScriptedImporter:
       spriteId: 2ab0074c96c15b64297a7d946712fb1d
     - name: summons1_Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 19
         y: 14
@@ -528,6 +540,7 @@ ScriptedImporter:
       spriteId: ced1ea549103bbc4d881a9a52fece218
     - name: summons1_Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 18
@@ -536,6 +549,7 @@ ScriptedImporter:
       spriteId: a9782a307ae411d41be8daf68d5b42c4
     - name: summons1_Frame_13
       frameIndex: 13
+      additiveSortOrder: 0
       cellRect:
         x: 22
         y: 23
@@ -544,6 +558,7 @@ ScriptedImporter:
       spriteId: 291a6bbedb9a0f04bb9677ad8a6cca3d
     - name: summons1_Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 25

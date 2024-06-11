@@ -1192,6 +1192,7 @@ ScriptedImporter:
     cells:
     - name: frost_guardian_free_Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 56
         y: 18
@@ -1200,6 +1201,7 @@ ScriptedImporter:
       spriteId: eb4ab15314b57c4469fefdd75431a471
     - name: frost_guardian_free_Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 56
         y: 18
@@ -1208,6 +1210,7 @@ ScriptedImporter:
       spriteId: 755e28dfdeec42c42a2990a609d51d5a
     - name: frost_guardian_free_Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 56
         y: 18
@@ -1216,6 +1219,7 @@ ScriptedImporter:
       spriteId: 3fd90df77c750f240a846b3560a0028e
     - name: frost_guardian_free_Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 55
         y: 18
@@ -1224,6 +1228,7 @@ ScriptedImporter:
       spriteId: 0c35374b4271db44db832f0a935fcd8a
     - name: frost_guardian_free_Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 56
         y: 18
@@ -1232,6 +1237,7 @@ ScriptedImporter:
       spriteId: 81b7722c0fef68f4fbeea921ed8d56ad
     - name: frost_guardian_free_Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 56
         y: 18
@@ -1240,6 +1246,7 @@ ScriptedImporter:
       spriteId: eee37b276a2665546a88c61ed8f4b82e
     - name: frost_guardian_free_Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 63
         y: 18
@@ -1248,6 +1255,7 @@ ScriptedImporter:
       spriteId: 4f2031ed160c5114faacc0c2a95bf353
     - name: frost_guardian_free_Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 63
         y: 18
@@ -1256,6 +1264,7 @@ ScriptedImporter:
       spriteId: d3aeb399593d1904aa83cb66a2eb71bb
     - name: frost_guardian_free_Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 63
         y: 18
@@ -1264,6 +1273,7 @@ ScriptedImporter:
       spriteId: ab253a8dbb807e84385cb01f0e9565a3
     - name: frost_guardian_free_Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 62
         y: 18
@@ -1272,6 +1282,7 @@ ScriptedImporter:
       spriteId: 70c7d58f1e08ee549b6e7716949c4aae
     - name: frost_guardian_free_Frame_10
       frameIndex: 10
+      additiveSortOrder: 0
       cellRect:
         x: 57
         y: 18
@@ -1280,6 +1291,7 @@ ScriptedImporter:
       spriteId: 6a1fb08bd71a3724ca7384c02413ff8b
     - name: frost_guardian_free_Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 51
         y: 18
@@ -1288,6 +1300,7 @@ ScriptedImporter:
       spriteId: 865cdeb9ac1a1b14598189ea5766bfdb
     - name: frost_guardian_free_Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 51
         y: 18
@@ -1296,6 +1309,7 @@ ScriptedImporter:
       spriteId: dfd2f79e625f7eb42a8f1e79ea3acd16
     - name: frost_guardian_free_Frame_13
       frameIndex: 13
+      additiveSortOrder: 0
       cellRect:
         x: 57
         y: 18
@@ -1304,6 +1318,7 @@ ScriptedImporter:
       spriteId: 5dc0a12b0dc71224c8a67d1a76ab9b05
     - name: frost_guardian_free_Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 62
         y: 18
@@ -1312,6 +1327,7 @@ ScriptedImporter:
       spriteId: 3c3b46cd981df254a8267af71913ce1b
     - name: frost_guardian_free_Frame_15
       frameIndex: 15
+      additiveSortOrder: 0
       cellRect:
         x: 63
         y: 18
@@ -1320,6 +1336,7 @@ ScriptedImporter:
       spriteId: 128d4a53b273f814b8548e106d6ac0c9
     - name: frost_guardian_free_Frame_16
       frameIndex: 16
+      additiveSortOrder: 0
       cellRect:
         x: 56
         y: 18
@@ -1328,6 +1345,7 @@ ScriptedImporter:
       spriteId: 207ee81198deab246b99370627a1c3bd
     - name: frost_guardian_free_Frame_17
       frameIndex: 17
+      additiveSortOrder: 0
       cellRect:
         x: 54
         y: 18
@@ -1336,6 +1354,7 @@ ScriptedImporter:
       spriteId: 569bb1b5b597d2e42ae3b69d1b7ef72e
     - name: frost_guardian_free_Frame_18
       frameIndex: 18
+      additiveSortOrder: 0
       cellRect:
         x: 52
         y: 18
@@ -1344,6 +1363,7 @@ ScriptedImporter:
       spriteId: aad5f31f9babdf64b8b128dc25f110ca
     - name: frost_guardian_free_Frame_19
       frameIndex: 19
+      additiveSortOrder: 0
       cellRect:
         x: 56
         y: 18
@@ -1352,6 +1372,7 @@ ScriptedImporter:
       spriteId: 6a1565b8ac80705409e8bc5d4591824e
     - name: frost_guardian_free_Frame_20
       frameIndex: 20
+      additiveSortOrder: 0
       cellRect:
         x: 57
         y: 18
@@ -1360,6 +1381,7 @@ ScriptedImporter:
       spriteId: 7c456729305775945a3cd7ec16b59f6c
     - name: frost_guardian_free_Frame_21
       frameIndex: 21
+      additiveSortOrder: 0
       cellRect:
         x: 57
         y: 18
@@ -1368,6 +1390,7 @@ ScriptedImporter:
       spriteId: 65809d4300cba7045a192054e3f19aaf
     - name: frost_guardian_free_Frame_22
       frameIndex: 22
+      additiveSortOrder: 0
       cellRect:
         x: 5
         y: 18
@@ -1376,6 +1399,7 @@ ScriptedImporter:
       spriteId: 8bee70a7e65b8414fa2933f53392c766
     - name: frost_guardian_free_Frame_23
       frameIndex: 23
+      additiveSortOrder: 0
       cellRect:
         x: 3
         y: 18
@@ -1384,6 +1408,7 @@ ScriptedImporter:
       spriteId: 9b4cbedbefcc0e949a44c8a66f3baed8
     - name: frost_guardian_free_Frame_24
       frameIndex: 24
+      additiveSortOrder: 0
       cellRect:
         x: 3
         y: 18
@@ -1392,6 +1417,7 @@ ScriptedImporter:
       spriteId: 501300ee9a7505c47b46485d1f294211
     - name: frost_guardian_free_Frame_25
       frameIndex: 25
+      additiveSortOrder: 0
       cellRect:
         x: 43
         y: 18
@@ -1400,6 +1426,7 @@ ScriptedImporter:
       spriteId: 86426f2d348e5a94aad63c2198c02d23
     - name: frost_guardian_free_Frame_26
       frameIndex: 26
+      additiveSortOrder: 0
       cellRect:
         x: 67
         y: 18
@@ -1408,6 +1435,7 @@ ScriptedImporter:
       spriteId: c695882f34361a74fa55f9be9dd9091f
     - name: frost_guardian_free_Frame_27
       frameIndex: 27
+      additiveSortOrder: 0
       cellRect:
         x: 67
         y: 18
@@ -1416,6 +1444,7 @@ ScriptedImporter:
       spriteId: 530be3d9171aeb541a16805f1a8fc3ab
     - name: frost_guardian_free_Frame_28
       frameIndex: 28
+      additiveSortOrder: 0
       cellRect:
         x: 55
         y: 18
@@ -1424,6 +1453,7 @@ ScriptedImporter:
       spriteId: f05c194902ad85f4ea8bce9cf6c2e751
     - name: frost_guardian_free_Frame_29
       frameIndex: 29
+      additiveSortOrder: 0
       cellRect:
         x: 56
         y: 18
@@ -1432,6 +1462,7 @@ ScriptedImporter:
       spriteId: e868eae209695f641bb6b8998f5e55f3
     - name: frost_guardian_free_Frame_30
       frameIndex: 30
+      additiveSortOrder: 0
       cellRect:
         x: 57
         y: 18
@@ -1440,6 +1471,7 @@ ScriptedImporter:
       spriteId: e3002d483753bbd4db7cfc5fa35cb2ff
     - name: frost_guardian_free_Frame_31
       frameIndex: 31
+      additiveSortOrder: 0
       cellRect:
         x: 60
         y: 18
@@ -1448,6 +1480,7 @@ ScriptedImporter:
       spriteId: 6fc6578a0ac67c24e84ed421236b002b
     - name: frost_guardian_free_Frame_32
       frameIndex: 32
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 18
@@ -1456,6 +1489,7 @@ ScriptedImporter:
       spriteId: 31034a00c7f806a4f9bc4daa9810c926
     - name: frost_guardian_free_Frame_33
       frameIndex: 33
+      additiveSortOrder: 0
       cellRect:
         x: 65
         y: 18
@@ -1464,6 +1498,7 @@ ScriptedImporter:
       spriteId: 4cbfdbd2e59ed3f47895d05ef03ec49d
     - name: frost_guardian_free_Frame_34
       frameIndex: 34
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 18
@@ -1472,6 +1507,7 @@ ScriptedImporter:
       spriteId: 4604026d408c2a74cb0432664ebcc3db
     - name: frost_guardian_free_Frame_35
       frameIndex: 35
+      additiveSortOrder: 0
       cellRect:
         x: 60
         y: 18
@@ -1480,6 +1516,7 @@ ScriptedImporter:
       spriteId: 88954a661021cee4a8ff5e1cc918d8f2
     - name: frost_guardian_free_Frame_36
       frameIndex: 36
+      additiveSortOrder: 0
       cellRect:
         x: 56
         y: 18
@@ -1488,6 +1525,7 @@ ScriptedImporter:
       spriteId: 1352f8e279b3bcb46b61ec1797eb4b2a
     - name: frost_guardian_free_Frame_37
       frameIndex: 37
+      additiveSortOrder: 0
       cellRect:
         x: 56
         y: 18
@@ -1496,6 +1534,7 @@ ScriptedImporter:
       spriteId: 49cfb3a28e90d6b48ad4ab3a829383a2
     - name: frost_guardian_free_Frame_38
       frameIndex: 38
+      additiveSortOrder: 0
       cellRect:
         x: 60
         y: 18
@@ -1504,6 +1543,7 @@ ScriptedImporter:
       spriteId: cb5c5b908d7697f448978f398560692f
     - name: frost_guardian_free_Frame_39
       frameIndex: 39
+      additiveSortOrder: 0
       cellRect:
         x: 61
         y: 18
@@ -1512,6 +1552,7 @@ ScriptedImporter:
       spriteId: 452e920f06241844d89456fe53693789
     - name: frost_guardian_free_Frame_40
       frameIndex: 40
+      additiveSortOrder: 0
       cellRect:
         x: 63
         y: 18
@@ -1520,6 +1561,7 @@ ScriptedImporter:
       spriteId: ce85a56cc71a1d44d84bfbdb3e9e4508
     - name: frost_guardian_free_Frame_41
       frameIndex: 41
+      additiveSortOrder: 0
       cellRect:
         x: 51
         y: 18
@@ -1528,6 +1570,7 @@ ScriptedImporter:
       spriteId: a34467cdf2e6c194cbf52e2f786ea05e
     - name: frost_guardian_free_Frame_42
       frameIndex: 42
+      additiveSortOrder: 0
       cellRect:
         x: 40
         y: 18
@@ -1536,6 +1579,7 @@ ScriptedImporter:
       spriteId: e82eb577813b3814cae148ccee479746
     - name: frost_guardian_free_Frame_43
       frameIndex: 43
+      additiveSortOrder: 0
       cellRect:
         x: 40
         y: 18
@@ -1544,6 +1588,7 @@ ScriptedImporter:
       spriteId: 042266a63ce1c8a4ead543674fa43294
     - name: frost_guardian_free_Frame_44
       frameIndex: 44
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 17
@@ -1552,6 +1597,7 @@ ScriptedImporter:
       spriteId: bf31ba2aed787b743b01f9a836602811
     - name: frost_guardian_free_Frame_45
       frameIndex: 45
+      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 17
@@ -1560,6 +1606,7 @@ ScriptedImporter:
       spriteId: e5d8e1fd7eb2b6045bff1bd987c71d59
     - name: frost_guardian_free_Frame_46
       frameIndex: 46
+      additiveSortOrder: 0
       cellRect:
         x: 4
         y: 17
@@ -1568,6 +1615,7 @@ ScriptedImporter:
       spriteId: aeaaf45d7494d4c4488fefbaec77c8b1
     - name: frost_guardian_free_Frame_47
       frameIndex: 47
+      additiveSortOrder: 0
       cellRect:
         x: 4
         y: 17
@@ -1576,6 +1624,7 @@ ScriptedImporter:
       spriteId: 2a2eab847f5f6a44ca62a9645c4ef498
     - name: frost_guardian_free_Frame_48
       frameIndex: 48
+      additiveSortOrder: 0
       cellRect:
         x: 4
         y: 17
@@ -1584,6 +1633,7 @@ ScriptedImporter:
       spriteId: f636f230d3297104480cb2aa74160e81
     - name: frost_guardian_free_Frame_49
       frameIndex: 49
+      additiveSortOrder: 0
       cellRect:
         x: 20
         y: 17
@@ -1592,6 +1642,7 @@ ScriptedImporter:
       spriteId: 0a379ad054749094095ccde4e7dfdf4a
     - name: frost_guardian_free_Frame_50
       frameIndex: 50
+      additiveSortOrder: 0
       cellRect:
         x: 22
         y: 16
@@ -1600,6 +1651,7 @@ ScriptedImporter:
       spriteId: cabbce7bb03fc2143878c6d9e1acdc05
     - name: frost_guardian_free_Frame_51
       frameIndex: 51
+      additiveSortOrder: 0
       cellRect:
         x: 46
         y: 15
@@ -1608,6 +1660,7 @@ ScriptedImporter:
       spriteId: 94236aa628e5e1d49946d33a2a9e02d7
     - name: frost_guardian_free_Frame_52
       frameIndex: 52
+      additiveSortOrder: 0
       cellRect:
         x: 46
         y: 15

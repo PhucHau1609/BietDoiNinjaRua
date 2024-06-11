@@ -5,6 +5,7 @@ public class gamedata
 {
     public int Coint = 0;
     public string timePlayer;
+    public string trong= "\n";
 }
 
 [System.Serializable]
