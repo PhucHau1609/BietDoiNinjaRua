@@ -14,7 +14,7 @@ public class BuletSC : MonoBehaviour
     private bool isTouch;
     void Start()
     {
-        FindObjectOfType<AudioManager>().Play("Arrow");
+        FindObjectOfType<AudioManager>().Play("Bulet");
         damageBulet = setDamageBulet;
         Destroy(gameObject, buletTimeDestroy);
         moveBulet = PlayerDie.isLeft ? Vector2.left : Vector2.right;
@@ -36,7 +36,13 @@ public class BuletSC : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Boss"))
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Boss"))
+        {
+            FindObjectOfType<AudioManager>().Play("EnemyGetDamage");
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Ground"))
         {
             Destroy(gameObject);
         }

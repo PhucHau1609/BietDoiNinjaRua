@@ -34,17 +34,20 @@ public class LevelManager : MonoBehaviour
 
         if (collision.gameObject.tag == "Coint")
         {
+            FindObjectOfType<AudioManager>().Play("Coint");
             getCointPTC.Play();
         }
 
         if (collision.gameObject.tag == "Heart")
         {
+            FindObjectOfType<AudioManager>().Play("GetFx");
             //addHeartPTC.Play();
             fxAddHeart.SetTrigger("Get");
         }
 
         if (collision.gameObject.tag == "Arrow")
         {
+            FindObjectOfType<AudioManager>().Play("GetArrow");
             getArrowPTC.Play();
         }
     }

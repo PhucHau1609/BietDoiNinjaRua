@@ -51,6 +51,7 @@ public class EnemiesGetDamage : MonoBehaviour
 
     private void EnemiesDie()
     {
+       
         rigiEnemyDie.gravityScale = gravityScaleDie;
 
         // Tắt tất cả các Collider2D
@@ -59,7 +60,7 @@ public class EnemiesGetDamage : MonoBehaviour
         {
             collider.enabled = false;
         }
-
+        FindObjectOfType<AudioManager>().Play("EnemyDeath");
         // Nếu có bất kỳ script điều khiển chuyển động nào, hãy vô hiệu hóa nó
         var movementScript = GetComponent<EnemyMoving>();
         if (movementScript != null)

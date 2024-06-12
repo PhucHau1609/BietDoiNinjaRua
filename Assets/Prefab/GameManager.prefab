@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 995736129427368217}
   - component: {fileID: 4997379949985480137}
-  - component: {fileID: 6633835244015326592}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -49,11 +48,3 @@ MonoBehaviour:
   HeartStart: 100
   LifeStart: 3
   BuletStart: 10
---- !u!81 &6633835244015326592
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1425186774189911505}
-  m_Enabled: 1

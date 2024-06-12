@@ -4938,7 +4938,7 @@ GameObject:
   - component: {fileID: 180878603521883319}
   - component: {fileID: 7511295442093039369}
   - component: {fileID: 7062389832025471121}
-  - component: {fileID: 7092984114770619157}
+  - component: {fileID: 3140186946421187614}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -5099,7 +5099,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 3
@@ -5208,11 +5208,11 @@ MonoBehaviour:
   - {x: -0.2020027, y: -0.5344861, z: 0}
   m_ShapePathHash: -1320773884
   m_Mesh: {fileID: 0}
-  m_InstanceId: -9904
+  m_InstanceId: -1694
   m_LocalBounds:
     m_Center: {x: 0.0007920563, y: -0.065983266, z: 0}
     m_Extent: {x: 0.3363024, y: 0.46861002, z: 0}
---- !u!81 &7092984114770619157
+--- !u!81 &3140186946421187614
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

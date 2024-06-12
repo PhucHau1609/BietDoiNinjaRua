@@ -114,6 +114,7 @@ public class PlayerDie : MonoBehaviour
 
         while (isTouchTrap)
         {
+            FindObjectOfType<AudioManager>().Play("PlayerTouchEnemy");
             GameManager.Instance.ReceiveDamage(damage);
             aniPlayer.SetBool("ReceiveDamage", true);
             yield return new WaitForSeconds(timeReTakeDamage);
@@ -125,6 +126,7 @@ public class PlayerDie : MonoBehaviour
 
     private IEnumerator PlayerReceiveDamageEnemy(int damage)
     {
+        FindObjectOfType<AudioManager>().Play("PlayerTouchEnemy");
         GameManager.Instance.ReceiveDamage(damage);
         aniPlayer.SetBool("ReceiveDamage", true);
         yield return new WaitForSeconds(timeReTakeDamage);
@@ -139,6 +141,7 @@ public class PlayerDie : MonoBehaviour
         {
             if (GameManager.Instance.GetLife() >= 1)
             {
+                FindObjectOfType<AudioManager>().Play("PlayerDeath");
                 GameManager.Instance.SetLifeTru(1);
                 player.transform.position = startCheckPoint;
                 GameManager.Instance.ResetDie();

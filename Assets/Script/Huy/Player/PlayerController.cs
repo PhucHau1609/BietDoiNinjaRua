@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+       
         runSpeedStart = runSpeed;
         myRigidbody = GetComponent<Rigidbody2D>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
