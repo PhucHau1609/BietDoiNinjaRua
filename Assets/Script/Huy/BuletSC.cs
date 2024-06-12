@@ -14,11 +14,13 @@ public class BuletSC : MonoBehaviour
     private bool isTouch;
     void Start()
     {
+        FindObjectOfType<AudioManager>().Play("Arrow");
         damageBulet = setDamageBulet;
         Destroy(gameObject, buletTimeDestroy);
         moveBulet = PlayerDie.isLeft ? Vector2.left : Vector2.right;
         spBulet = GetComponent<SpriteRenderer>();
         myBoxCollider2D = GetComponent<BoxCollider2D>();
+
 
     }
 
