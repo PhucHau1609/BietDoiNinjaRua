@@ -47,3 +47,4 @@ MonoBehaviour:
   isDestroyOnLoad: 0
   HeartStart: 100
   LifeStart: 3
+  BuletStart: 10
