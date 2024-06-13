@@ -9,6 +9,8 @@ public class BossController : MonoBehaviour
     public float stoppingDistance = 1.5f;
     [SerializeField] float timeDelayTakeDamage = 0.5f;
     [SerializeField] float timeDelayAttack = 1f;
+    [SerializeField] float moveSpeedUp = 30f;
+    [SerializeField] Color newColor = Color.red;
 
     private bool isFlipped = false; 
     private Animator animator;
@@ -16,26 +18,39 @@ public class BossController : MonoBehaviour
     private bool canAttak = true;
 
     private Vector3 originalScale;
+    
 
     void Start()
     {
         animator = GetComponent<Animator>();
-        originalScale = transform.localScale; 
+        originalScale = transform.localScale;
     }
 
     void Update()
     {
         MoveTowardsPlayer();
         FlipSprite();
+        Debug.Log(moveSpeed);
     }
 
+    public void BossPhanNo()
+    {
+        if (Boss2.currenHeartEnemies < 250)
+        {
+            Debug.Log("Boss phan no");
+            moveSpeed = moveSpeedUp;
+            Renderer renderer = GetComponent<Renderer>();
+            renderer.material.color = newColor;
+
+        }
+        
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Bulet"))
         {
             animator.SetTrigger("Hit");
-            // khi nhan damage enemy tam dung
             StartCoroutine(BossStopWalk());
         }
     
@@ -44,6 +59,8 @@ public class BossController : MonoBehaviour
 
     void MoveTowardsPlayer()
     {
+        BossPhanNo();
+
         float horizontalDistance = Mathf.Abs(player.position.x - transform.position.x);
 
         if (horizontalDistance > stoppingDistance && canWalk)
@@ -70,6 +87,7 @@ public class BossController : MonoBehaviour
         if (Boss2.currenHeartEnemies < 1)
         {
             animator.SetBool("Death", true);
+            moveSpeed = 0;
         }
     }
 
