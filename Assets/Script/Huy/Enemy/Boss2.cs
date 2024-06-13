@@ -22,6 +22,7 @@ public class Boss2 : MonoBehaviour
     private void Awake()
     {
         showCurrenHeartEnemies = heartEnemies;
+        currenHeartEnemies = showCurrenHeartEnemies;
     }
 
     private void Start()
