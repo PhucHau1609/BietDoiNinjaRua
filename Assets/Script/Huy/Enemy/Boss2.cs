@@ -16,7 +16,6 @@ public class Boss2 : MonoBehaviour
     [SerializeField] Slider heartBarYellow;
     [SerializeField] Slider heartBarRed;
     [SerializeField] ParticleSystem enemyGetDamageFx;
-    [SerializeField] Rigidbody2D rigiEnemyDie;
 
     public static float currenHeartEnemies;
 
@@ -53,17 +52,15 @@ public class Boss2 : MonoBehaviour
 
     private void EnemiesDie()
     {
-
-        rigiEnemyDie.gravityScale = gravityScaleDie;
-
-        // Tắt tất cả các Collider2D
-        Collider2D[] colliders = GetComponentsInChildren<Collider2D>();
-        foreach (Collider2D collider in colliders)
-        {
-            collider.enabled = false;
-        }
-        FindObjectOfType<AudioManager>().Play("EnemyDeath");
+        //// Tắt tất cả các Collider2D
+        //Collider2D[] colliders = GetComponentsInChildren<Collider2D>();
+        //foreach (Collider2D collider in colliders)
+        //{
+        //    collider.enabled = false;
+        //}
+        //FindObjectOfType<AudioManager>().Play("EnemyDeath");
         // Nếu có bất kỳ script điều khiển chuyển động nào, hãy vô hiệu hóa nó
+
         var movementScript = GetComponent<EnemyMoving>();
         if (movementScript != null)
         {
