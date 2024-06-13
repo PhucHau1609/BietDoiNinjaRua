@@ -60,7 +60,6 @@ public class GameManager : Singleton<GameManager>
     {
         Coint = 0;
         Heart = HeartStart;
-        CountBulet = 0;
     }
 
     public void SetLifeCong(int value)

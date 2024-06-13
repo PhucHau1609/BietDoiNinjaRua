@@ -132,7 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointA: {fileID: 1915587278968962066}
   pointB: {fileID: 5577506002087620282}
-  speed: 2
+  speed: 3
 --- !u!61 &4675211262920239318
 BoxCollider2D:
   m_ObjectHideFlags: 0
