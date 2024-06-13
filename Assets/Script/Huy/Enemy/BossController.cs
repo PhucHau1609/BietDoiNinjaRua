@@ -9,13 +9,19 @@ public class BossController : MonoBehaviour
     public float stoppingDistance = 1.5f;
     [SerializeField] float timeDelayTakeDamage = 0.5f;
     [SerializeField] float timeDelayAttack = 1f;
+    [SerializeField] float timeOutEnemy = 5f;
     [SerializeField] float moveSpeedUp = 30f;
     [SerializeField] Color newColor = Color.red;
+    [SerializeField] GameObject enemyOut;
+    //[SerializeField] float RandomOutMin = 1f;
+    //[SerializeField] float RandomOutMax = 2f;
 
     private bool isFlipped = false; 
     private Animator animator;
     private bool canWalk = true;
     private bool canAttak = true;
+    private bool canOut = true;
+    
 
     private Vector3 originalScale;
     
@@ -30,20 +36,44 @@ public class BossController : MonoBehaviour
     {
         MoveTowardsPlayer();
         FlipSprite();
-        Debug.Log(moveSpeed);
     }
 
     public void BossPhanNo()
     {
+        if (Boss2.currenHeartEnemies < 1)
+        {
+            animator.SetBool("Death", true);
+            moveSpeed = 0;
+        }
+
         if (Boss2.currenHeartEnemies < 250)
         {
-            Debug.Log("Boss phan no");
+            
             moveSpeed = moveSpeedUp;
             Renderer renderer = GetComponent<Renderer>();
             renderer.material.color = newColor;
 
+            if (canOut)
+            {
+                canOut = false;
+                StartCoroutine(EnemyOut());
+            }
         }
-        
+    }
+
+    void ShowEnemy()
+    {
+        var enemy = transform.position;
+
+        enemy.x = isFlipped ? enemy.x -= 1.5f : enemy.x += 1.5f;
+        enemy.y = isFlipped ? enemy.y -= 0.2f : enemy.y += 0.2f;
+
+        int numberRandomEnemy = Random.Range(1, 2);
+
+        for (int i = 0; i < numberRandomEnemy; i++)
+        {
+            Instantiate(enemyOut, enemy, Quaternion.identity);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -59,7 +89,6 @@ public class BossController : MonoBehaviour
 
     void MoveTowardsPlayer()
     {
-        BossPhanNo();
 
         float horizontalDistance = Mathf.Abs(player.position.x - transform.position.x);
 
@@ -84,11 +113,7 @@ public class BossController : MonoBehaviour
             StartCoroutine(BossAttak());
         }
 
-        if (Boss2.currenHeartEnemies < 1)
-        {
-            animator.SetBool("Death", true);
-            moveSpeed = 0;
-        }
+        BossPhanNo();
     }
 
     void FlipSprite()
@@ -117,10 +142,20 @@ public class BossController : MonoBehaviour
     {
         canWalk = false;
         animator.SetTrigger("Attack");
+        FindObjectOfType<AudioManager>().Play("BossAttak");
         yield return new WaitForSeconds(timeDelayAttack);
         canWalk = true;
         canAttak = true;
 
     }
+
+    private IEnumerator EnemyOut()
+    {
+    
+        yield return new WaitForSeconds(timeOutEnemy);
+        ShowEnemy();
+        canOut = true;
+    }
+
 
 }

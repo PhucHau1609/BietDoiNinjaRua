@@ -93,3 +93,9 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: BossAttak
+    clip: {fileID: 8300000, guid: a4ad678fdb08a4192b94f0a48d8df28d, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

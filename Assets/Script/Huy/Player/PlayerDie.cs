@@ -19,6 +19,7 @@ public class PlayerDie : MonoBehaviour
     [SerializeField] int damageTrap = 1;
     [SerializeField] int damageWater = 1;
     [SerializeField] int damageEnemy = 1;
+    [SerializeField] int damageBoss = 1;
     [SerializeField] int damageBulet = 5;
 
     [Header("Bulet")]
@@ -87,6 +88,14 @@ public class PlayerDie : MonoBehaviour
         if (collision.gameObject.tag == "Heart")
         {
 
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Boss")
+        {
+            StartCoroutine(PlayerReceiveDamageEnemy(damageBoss));
         }
     }
 

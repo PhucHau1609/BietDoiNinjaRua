@@ -73,6 +73,5 @@ public class Timer : MonoBehaviour
         timeRemaining = initialTime; // Đặt lại thời gian về thời gian ban đầu
         timerIsRunning = false; // Dừng bộ đếm thời gian
         DisplayTime(timeRemaining); // Cập nhật UI với thời gian đã được đặt lại
-        Debug.Log("Bộ đếm thời gian đã được đặt lại!");
     }
 }

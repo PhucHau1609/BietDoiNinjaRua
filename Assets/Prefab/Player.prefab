@@ -5208,7 +5208,7 @@ MonoBehaviour:
   - {x: -0.2020027, y: -0.5344861, z: 0}
   m_ShapePathHash: -1320773884
   m_Mesh: {fileID: 0}
-  m_InstanceId: -115480
+  m_InstanceId: -1340
   m_LocalBounds:
     m_Center: {x: 0.0007920563, y: -0.065983266, z: 0}
     m_Extent: {x: 0.3363024, y: 0.46861002, z: 0}
@@ -5689,9 +5689,10 @@ MonoBehaviour:
   timeLoadGameOverPlayerDied: 0.5
   player: {fileID: 1165992207888900492}
   setATIcon: {fileID: 0}
-  damageTrap: 20
-  damageWater: 15
-  damageEnemy: 30
+  damageTrap: 10
+  damageWater: 10
+  damageEnemy: 15
+  damageBoss: 30
   damageBulet: 5
   buletGOJ: {fileID: 6752860251428616999, guid: 9ac2c28ca94554a0e8a10f77a97e5c63, type: 3}
 --- !u!114 &48303201340576437
