@@ -11,6 +11,7 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
+  
     public float timeRemaining = 10f; // Thời gian ban đầu
     private float initialTime; // Để lưu trữ giá trị thời gian ban đầu
     public static bool timerIsRunning = false;

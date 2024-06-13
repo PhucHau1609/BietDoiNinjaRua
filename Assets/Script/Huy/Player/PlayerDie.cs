@@ -13,7 +13,7 @@ public class PlayerDie : MonoBehaviour
     [SerializeField] float timeReTakeDamage;
     [SerializeField] float timeLoadGameOverPlayerDied;
     [SerializeField] GameObject player;
-
+    [SerializeField] GameObject setATIcon;
 
     [Header("Damage")]
     [SerializeField] int damageTrap = 1;
@@ -94,7 +94,7 @@ public class PlayerDie : MonoBehaviour
     {
         if (collision.gameObject.tag == "Water")
         {
- 
+            setATIcon.SetActive(true);
             Timer.timerIsRunning = true;
             if (Timer.TimeOver && !hasTakenDamage)
             {
@@ -115,6 +115,7 @@ public class PlayerDie : MonoBehaviour
     {
         if (collision.gameObject.tag == "Water")
         {
+            setATIcon.SetActive(false);
             isTouchTrap = false;
             Timer.timerIsRunning = false;
             playerRigi.gravityScale = 3; 
