@@ -14,6 +14,7 @@ public class PlayerDie : MonoBehaviour
     [SerializeField] float timeLoadGameOverPlayerDied;
     [SerializeField] GameObject player;
 
+
     [Header("Damage")]
     [SerializeField] int damageTrap = 1;
     [SerializeField] int damageWater = 1;
@@ -27,6 +28,7 @@ public class PlayerDie : MonoBehaviour
    
     Rigidbody2D playerRigi;
     private Vector2 startCheckPoint;
+    private bool hasTakenDamage = false;
 
     bool isTouchTrap;
 
@@ -88,23 +90,35 @@ public class PlayerDie : MonoBehaviour
         }
     }
 
-    // xu ly playercham vao nuoc
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Water")
         {
-            playerRigi.gravityScale = 0.5f; // Giảm trọng lực khi vào vùng nước
+ 
+            Timer.timerIsRunning = true;
+            if (Timer.TimeOver && !hasTakenDamage)
+            {
+                Debug.Log("Damage in water is working");
+                isTouchTrap = true;
+                StartCoroutine(PlayerReceiveDamage(damageTrap));
+                hasTakenDamage = true; 
+            }
+            playerRigi.gravityScale = 0.5f; 
             PlayerController.runSpeed = 2;
             playerRigi.drag = 5;
             //Debug.Log("In: " + PlayerController.runSpeed);
+        
         }
     }
-   
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Water")
         {
-            playerRigi.gravityScale = 3; // Khôi phục trọng lực khi ra khỏi vùng nước
+            isTouchTrap = false;
+            Timer.timerIsRunning = false;
+            playerRigi.gravityScale = 3; 
+            hasTakenDamage = false;
             //Debug.Log("Out: " + PlayerController.runSpeed);
         }
     }
@@ -141,6 +155,7 @@ public class PlayerDie : MonoBehaviour
         {
             if (GameManager.Instance.GetLife() >= 1)
             {
+                isTouchTrap = false;
                 FindObjectOfType<AudioManager>().Play("PlayerDeath");
                 GameManager.Instance.SetLifeTru(1);
                 player.transform.position = startCheckPoint;
