@@ -10,7 +10,6 @@ public class EnemyOut : MonoBehaviour
 
     private GameObject player;
     private bool isFlipped = false;
-    private Animator animator;
 
     private Vector3 originalScale;
 
@@ -18,7 +17,6 @@ public class EnemyOut : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
-        animator = GetComponent<Animator>();
         originalScale = transform.localScale;
     }
 
@@ -35,8 +33,6 @@ public class EnemyOut : MonoBehaviour
 
         if (horizontalDistance > stoppingDistance)
         {
-            //animator.SetBool("Walk", true);
-
             Vector2 direction = new Vector2(player.transform.position.x - transform.position.x, 0).normalized;
             Vector2 movePosition = (Vector2)transform.position + direction * moveSpeed * Time.deltaTime;
             transform.position = Vector2.Lerp(transform.position, movePosition, Time.deltaTime * moveSpeed);
