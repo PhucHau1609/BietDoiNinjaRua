@@ -30,7 +30,6 @@ public class PlayerDie : MonoBehaviour
     Rigidbody2D playerRigi;
     private Vector2 startCheckPoint;
     private bool hasTakenDamage = false;
-
     bool isTouchTrap;
 
     private void Start()
@@ -38,6 +37,7 @@ public class PlayerDie : MonoBehaviour
         startCheckPoint = player.transform.position;
         player = GameObject.Find("Player");
         playerRigi = player.GetComponent<Rigidbody2D>();
+
     }
 
     private void Update()
@@ -179,7 +179,7 @@ public class PlayerDie : MonoBehaviour
     {
         if (GameManager.Instance.GetLife() < 1)
         {
-            Destroy(player);
+            player.SetActive(false);
             SceneManager.LoadScene("GameOver");
         }
     }
