@@ -94,3 +94,6 @@ TagManager:
   - name: UI
     uniqueID: 2742550457
     locked: 0
+  - name: NoLight
+    uniqueID: 116419481
+    locked: 0

@@ -179,7 +179,6 @@ public class PlayerDie : MonoBehaviour
     {
         if (GameManager.Instance.GetLife() < 1)
         {
-            //SaveData.Instance.AddDataPlayer();
             ClockController.Instance.StopTime();
             ClockController.Instance.ResetTime();
             GameManager.Instance.Reset();

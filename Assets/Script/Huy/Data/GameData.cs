@@ -8,7 +8,8 @@ public class GameData
 {
     public string NamePlayer;
     public int Score;
-    public string TimePlayed; 
+    public string TimePlayed;
+    public string DatePlayed;
 }
 
 [Serializable]

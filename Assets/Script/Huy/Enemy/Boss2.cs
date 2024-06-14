@@ -69,7 +69,7 @@ public class Boss2 : MonoBehaviour
             movementScript.enabled = false;
         }
 
-        //SaveData.Instance.AddDataPlayer();
+        Save.Instance.AddGamePlayed();
         ClockController.Instance.StopTime();
         ClockController.Instance.ResetTime();
         GameManager.Instance.Reset();

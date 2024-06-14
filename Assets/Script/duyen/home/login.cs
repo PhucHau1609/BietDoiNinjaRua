@@ -95,7 +95,6 @@ public class login : MonoBehaviour
     {
         animatorPlayerLogin.SetTrigger("Play");
         yield return new WaitForSeconds(timeWayPlay);
-        ClockController.Instance.StartTime();
         SceneManager.LoadScene("Map 1");
 
     }
