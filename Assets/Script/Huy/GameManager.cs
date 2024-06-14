@@ -58,7 +58,7 @@ public class GameManager : Singleton<GameManager>
 
     public void ResetDie()
     {
-        Coint = 0;
+        //Coint = 0;
         Heart = HeartStart;
     }
 
@@ -96,17 +96,4 @@ public class GameManager : Singleton<GameManager>
     {
         Heart += value;
     }
-
-    public void PlayAgain()
-    {
-        SceneManager.LoadScene("Map 1");
-    }
-
-    public void Exit()
-    {
-        Application.Quit();
-        Debug.Log("Quit Game...");
-        SceneManager.LoadScene("Home");
-    }
-
 }
