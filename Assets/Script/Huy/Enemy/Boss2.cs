@@ -69,6 +69,11 @@ public class Boss2 : MonoBehaviour
             movementScript.enabled = false;
         }
 
+        //SaveData.Instance.AddDataPlayer();
+        ClockController.Instance.StopTime();
+        ClockController.Instance.ResetTime();
+        GameManager.Instance.Reset();
+
         Destroy(gameObject, timeDestroyObj);
         SceneManager.LoadScene("WinScene");
     }

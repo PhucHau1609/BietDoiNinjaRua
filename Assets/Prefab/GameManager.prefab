@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 995736129427368217}
   - component: {fileID: 4997379949985480137}
+  - component: {fileID: 5873933725136058358}
+  - component: {fileID: 2507802233606640012}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -47,4 +49,31 @@ MonoBehaviour:
   isDestroyOnLoad: 0
   HeartStart: 100
   LifeStart: 3
-  BuletStart: 10
+  BuletStart: 20
+--- !u!114 &5873933725136058358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425186774189911505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e25b2a5f76a664763b7a48a384415dd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDestroyOnLoad: 0
+  dateTimeTextShow: {fileID: 0}
+--- !u!114 &2507802233606640012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425186774189911505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cc54150fea924257bf11029c292c548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDestroyOnLoad: 0

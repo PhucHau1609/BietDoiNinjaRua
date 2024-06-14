@@ -5,21 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class ButtonController : MonoBehaviour
 {
-    private GameObject player;
     private void Start()
     {
-        player = GameObject.Find("Player");
+        //SaveData.Instance.GetDataPlayer();
     }
+
     public void PlayAgain()
     {
-        player.SetActive(true);
         SceneManager.LoadScene("Map 1");
+        ClockController.Instance.StartTime();
     }
 
     public void Exit()
     {
         Application.Quit();
-        Debug.Log("Quit Game...");
+        //Debug.Log("Quit Game...");
         SceneManager.LoadScene("Home");
     }
 

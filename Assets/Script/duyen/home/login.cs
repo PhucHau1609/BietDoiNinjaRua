@@ -95,7 +95,13 @@ public class login : MonoBehaviour
     {
         animatorPlayerLogin.SetTrigger("Play");
         yield return new WaitForSeconds(timeWayPlay);
+        ClockController.Instance.StartTime();
         SceneManager.LoadScene("Map 1");
 
+    }
+
+    public void SetNamePlayer()
+    {
+        GameManager.Instance.SetName(edtName.text);
     }
 }

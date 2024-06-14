@@ -7,7 +7,7 @@ public class Player
     public int playerScore;
 }
 
-public class PlayerData : MonoBehaviour
+public class Data : MonoBehaviour
 {
     // Danh sách người chơi
     List<Player> players = new List<Player>();

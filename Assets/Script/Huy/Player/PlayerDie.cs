@@ -179,7 +179,12 @@ public class PlayerDie : MonoBehaviour
     {
         if (GameManager.Instance.GetLife() < 1)
         {
-            player.SetActive(false);
+            //SaveData.Instance.AddDataPlayer();
+            ClockController.Instance.StopTime();
+            ClockController.Instance.ResetTime();
+            GameManager.Instance.Reset();
+
+            Destroy(gameObject);
             SceneManager.LoadScene("GameOver");
         }
     }

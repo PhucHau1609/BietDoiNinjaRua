@@ -4938,7 +4938,6 @@ GameObject:
   - component: {fileID: 180878603521883319}
   - component: {fileID: 7511295442093039369}
   - component: {fileID: 7062389832025471121}
-  - component: {fileID: 3140186946421187614}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -5208,18 +5207,10 @@ MonoBehaviour:
   - {x: -0.2020027, y: -0.5344861, z: 0}
   m_ShapePathHash: -1320773884
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1340
+  m_InstanceId: -2192
   m_LocalBounds:
     m_Center: {x: 0.0007920563, y: -0.065983266, z: 0}
     m_Extent: {x: 0.3363024, y: 0.46861002, z: 0}
---- !u!81 &3140186946421187614
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1165992207888900492}
-  m_Enabled: 1
 --- !u!1 &1451033830027334216
 GameObject:
   m_ObjectHideFlags: 0
@@ -5518,8 +5509,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -0.06, y: -0.49}
+  m_SizeDelta: {x: 106.0715, y: 94.561}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1868557301153612635
 MonoBehaviour:

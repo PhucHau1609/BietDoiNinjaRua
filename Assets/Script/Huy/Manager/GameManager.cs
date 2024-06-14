@@ -13,6 +13,9 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] int HeartStart = 100;
     [SerializeField] int LifeStart = 3;
     [SerializeField] int BuletStart = 10;
+
+    private string Name;
+    private string TimePlay;
     private int Heart;
     private int Life;
     private int Coint;
@@ -27,6 +30,16 @@ public class GameManager : Singleton<GameManager>
     {
         Life = LifeStart;
         Reset();
+    }
+
+    public string GetName()
+    {
+        return Name;
+    }
+
+    public string GetTimePlay()
+    {
+        return TimePlay;
     }
 
     public int GetCoint()
@@ -54,12 +67,23 @@ public class GameManager : Singleton<GameManager>
         Coint = 0;
         Heart = HeartStart;
         CountBulet = BuletStart;
+        Life = LifeStart;
     }
 
     public void ResetDie()
     {
         //Coint = 0;
         Heart = HeartStart;
+    }
+
+    public void SetName(string value)
+    {
+        Name = value;
+    }
+
+    public void SetTimePlay(string value)
+    {
+        TimePlay = value;
     }
 
     public void SetLifeCong(int value)
@@ -96,4 +120,6 @@ public class GameManager : Singleton<GameManager>
     {
         Heart += value;
     }
+
+
 }
